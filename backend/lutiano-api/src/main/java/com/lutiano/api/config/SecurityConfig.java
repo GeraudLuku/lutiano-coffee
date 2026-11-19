@@ -1,5 +1,6 @@
 package com.lutiano.api.config;
 
+import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -83,6 +84,8 @@ public class SecurityConfig {
         .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(a -> a
             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+            // health, info and prometheus: served on the separate management port (MANAGEMENT_PORT), not published publicly
+            .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
             .requestMatchers("/health", "/auth/login", "/auth/mfa/**", "/auth/password/forgot", "/auth/password/reset", "/media/**", "/error", "/catalogue/search").permitAll()
             // the Customer app: open sign-up and sign-in and the public menu; everything else of a customer needs a customer token
             .requestMatchers("/public/**", "/customer/auth/**").permitAll()

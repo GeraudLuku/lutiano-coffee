@@ -1,0 +1,33 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "lutiano-api",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd backend/lutiano-api && DB_URL=jdbc:mariadb://localhost:3307/lutiano REDIS_PORT=6380 ./gradlew bootRun --console=plain"
+      ],
+      "port": 8080,
+      "url": "http://localhost:8080"
+    },
+    {
+      "name": "lutiano-admin",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd apps/admin-web && npm run dev"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "lutiano-admin-8081",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "cd apps/admin-web && VITE_API_BASE=http://localhost:8081/api/v1 npm run dev -- --port 5173"
+      ],
+      "port": 5173
+    }
+  ]
+}

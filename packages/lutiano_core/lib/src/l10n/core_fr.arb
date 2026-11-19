@@ -1,0 +1,22 @@
+{
+  "retry": "Réessayer",
+  "all": "Tous",
+  "loading": "Chargement",
+  "addToCart": "Ajouter au panier",
+  "decreaseQuantity": "Diminuer la quantité",
+  "increaseQuantity": "Augmenter la quantité",
+  "errUnexpected": "Une erreur est survenue. Réessayez.",
+  "errNetwork": "Impossible de joindre le serveur LUTIANO. Vérifiez votre connexion et réessayez.",
+  "errSessionExpired": "Votre session a expiré. Reconnectez-vous.",
+  "errForbidden": "Vous n'avez pas l'autorisation de faire cela.",
+  "errGeneric": "Une erreur est survenue ({status}). Réessayez.",
+  "@errGeneric": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "takePhoto": "Prendre une photo",
+  "chooseFromGallery": "Choisir dans la galerie"
+}

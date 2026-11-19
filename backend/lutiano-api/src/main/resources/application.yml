@@ -1,0 +1,89 @@
+server:
+  port: 8080
+  servlet.context-path: /api/v1
+spring:
+  mvc:
+    format:
+      date: iso
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+  datasource:
+    url: ${DB_URL:jdbc:mariadb://localhost:3306/lutiano}
+    username: ${DB_USER:lutiano}
+    password: ${DB_PASSWORD:local-lutiano}
+  flyway.locations: classpath:db/migration
+  # One-time codes (2FA, payout numbers) and sign-in challenges live here, so they expire on their own.
+  data.redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+  # Search index connection. The API signs in as the least-privilege lutiano_app user, never as elastic.
+  elasticsearch:
+    uris: ${ELASTICSEARCH_URL:http://localhost:9200}
+    username: ${ELASTICSEARCH_USERNAME:lutiano_app}
+    password: ${ELASTICSEARCH_PASSWORD:local-search-app}
+    connection-timeout: ${ELASTICSEARCH_CONNECT_TIMEOUT_MS:3000}ms
+    socket-timeout: ${ELASTICSEARCH_SOCKET_TIMEOUT_MS:10000}ms
+lutiano:
+  # Push notifications (Firebase Cloud Messaging). The service-account key is a secret: keep it out of Git and out of the jar.
+  # Without the file, push is simply off.
+  push:
+    credentials: ${LUTIANO_FIREBASE_CREDENTIALS:secrets/firebase-service-account.json}
+  # Development-only default. Set LUTIANO_JWT_SECRET (32+ characters) in every shared environment.
+  jwt:
+    secret: ${LUTIANO_JWT_SECRET:local-development-secret-change-me-0123456789}
+    ttl-hours: ${LUTIANO_JWT_TTL_HOURS:8}
+  cors:
+    allowed-origins: ${LUTIANO_CORS_ORIGINS:http://localhost:5173}
+  # Any S3-compatible store (SeaweedFS locally; AWS S3, R2, etc. elsewhere).
+  storage:
+    endpoint: ${S3_ENDPOINT:http://localhost:9000}
+    region: ${S3_REGION:us-east-1}
+    access-key: ${S3_ACCESS_KEY:lutiano}
+    secret-key: ${S3_SECRET_KEY:local-storage-secret}
+    bucket: ${S3_BUCKET:products}
+    # Private bucket for seller eligibility documents; served only to administrators through the API.
+    documents-bucket: ${S3_DOCUMENTS_BUCKET:seller-documents}
+  # Sign in with Google / Apple in the Customer app. A provider with no ids is switched off (its button is hidden).
+  # google.client-ids: the OAuth client ids of the app (web, Android, iOS); apple.audiences: the iOS bundle id (and the Services ID for web).
+  social:
+    google:
+      client-ids: ${LUTIANO_GOOGLE_CLIENT_IDS:}
+    apple:
+      audiences: ${LUTIANO_APPLE_AUDIENCES:}
+  sellers:
+    # Documents a seller needs (verified and not expired) to be eligible. Types: NATIONAL_ID, CONTRACT, HEALTH_CERTIFICATE, OTHER.
+    required-documents: ${LUTIANO_SELLER_REQUIRED_DOCUMENTS:NATIONAL_ID,CONTRACT}
+    # When true, sellers who are not eligible cannot be assigned to a sales location.
+    enforce-eligibility: ${LUTIANO_SELLER_ENFORCE_ELIGIBILITY:false}
+  refunds:
+    # The administrator who requests a refund cannot approve or reject it.
+    second-approver: ${LUTIANO_REFUNDS_SECOND_APPROVER:true}
+  # Hombee SMS. In "dev" mode (or without an API key) messages are written to the log instead of being sent.
+  sms:
+    mode: ${LUTIANO_SMS_MODE:dev}
+    base-url: ${HOMBEE_SMS_BASE_URL:https://api.hombee.com}
+    api-key: ${HOMBEE_SMS_API_KEY:}
+    sender-id: ${HOMBEE_SMS_SENDER_ID:LUTIANO}
+    connect-timeout-ms: 5000
+    read-timeout-ms: 10000
+  otp:
+    length: 6
+    ttl-seconds: 300
+    max-attempts: 5
+    resend-cooldown-seconds: 60
+    max-per-hour: 5
+    # Accepted as a valid code while SMS is in dev mode. The API refuses to start if this is set and SMS mode is live.
+    dev-code: ${LUTIANO_OTP_DEV_CODE:123456}
+  mfa:
+    # Administrators confirm every sign-in with an SMS code.
+    enabled: ${LUTIANO_MFA_ENABLED:true}
+  # Search (Elasticsearch). MariaDB stays the source of truth; see docs/search/.
+  search:
+    indexing-enabled: ${SEARCH_INDEXING_ENABLED:true}
+    batch-size: ${SEARCH_BATCH_SIZE:200}
+    retry-max-attempts: ${SEARCH_RETRY_MAX_ATTEMPTS:6}
+    candidate-cap: 5000
+    verification-cap: 500
+    max-query-length: 100

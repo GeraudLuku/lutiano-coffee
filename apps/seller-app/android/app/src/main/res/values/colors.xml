@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- AppColors.navyDeep: the sign-in screen background, also the icon and splash background -->
+    <color name="lutiano_navy">#071A35</color>
+</resources>

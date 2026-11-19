@@ -1,0 +1,40 @@
+.DS_Store
+.env
+.idea/
+*.iml
+
+# backend
+backend/**/build/
+backend/**/.gradle/
+
+# admin web
+apps/admin-web/node_modules/
+apps/admin-web/dist/
+
+# flutter
+apps/*/.dart_tool/
+apps/*/build/
+apps/*/.flutter-plugins
+apps/*/.flutter-plugins-dependencies
+apps/*/pubspec.lock
+
+# secrets (never commit)
+backend/lutiano-api/secrets/
+*firebase-adminsdk*.json
+infrastructure/dev/contract/baseline/.tokens.json
+infrastructure/dev/contract/out/
+infrastructure/dev/contract/__pycache__/
+
+# shared Flutter package
+packages/*/.dart_tool/
+packages/*/build/
+packages/*/pubspec.lock
+
+# Firebase app config: injected by CI from secrets
+**/google-services.json
+**/GoogleService-Info.plist
+
+# signing material, anywhere (belt and braces)
+*.jks
+*.keystore
+key.properties

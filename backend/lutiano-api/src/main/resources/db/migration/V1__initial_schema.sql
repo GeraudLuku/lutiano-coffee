@@ -1,0 +1,11 @@
+CREATE TABLE staff_user (id CHAR(36) PRIMARY KEY, email VARCHAR(190) NOT NULL UNIQUE, password_hash VARCHAR(100) NOT NULL, full_name VARCHAR(150) NOT NULL, role VARCHAR(30) NOT NULL, active BOOLEAN NOT NULL DEFAULT TRUE);
+CREATE TABLE operation (id CHAR(36) PRIMARY KEY, name VARCHAR(150) NOT NULL, code VARCHAR(40) NOT NULL UNIQUE, active BOOLEAN NOT NULL DEFAULT TRUE, qr_token CHAR(36) NOT NULL UNIQUE);
+CREATE TABLE seller_operation (seller_id CHAR(36) NOT NULL, operation_id CHAR(36) NOT NULL, PRIMARY KEY(seller_id,operation_id));
+CREATE TABLE product (id CHAR(36) PRIMARY KEY, sku VARCHAR(80) NOT NULL UNIQUE, name VARCHAR(150) NOT NULL, price_xaf BIGINT NOT NULL, active BOOLEAN NOT NULL DEFAULT TRUE, image_url VARCHAR(500));
+CREATE TABLE inventory_balance (operation_id CHAR(36) NOT NULL, product_id CHAR(36) NOT NULL, quantity INT NOT NULL DEFAULT 0, PRIMARY KEY(operation_id,product_id));
+CREATE TABLE stock_receipt (id CHAR(36) PRIMARY KEY, product_id CHAR(36) NOT NULL, quantity INT NOT NULL, actor_id CHAR(36) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE stock_allocation (id CHAR(36) PRIMARY KEY, operation_id CHAR(36) NOT NULL, product_id CHAR(36) NOT NULL, sent_quantity INT NOT NULL, received_quantity INT, status VARCHAR(20) NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE cash_shift (id CHAR(36) PRIMARY KEY, seller_id CHAR(36) NOT NULL, opening_float BIGINT NOT NULL, expected_cash BIGINT NOT NULL, counted_cash BIGINT, variance_reason VARCHAR(500), status VARCHAR(20) NOT NULL, opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, closed_at TIMESTAMP NULL);
+CREATE TABLE sale (id CHAR(36) PRIMARY KEY, seller_id CHAR(36) NOT NULL, operation_id CHAR(36) NOT NULL, shift_id CHAR(36) NOT NULL, idempotency_key VARCHAR(120) NOT NULL UNIQUE, total_xaf BIGINT NOT NULL, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE sale_line (sale_id CHAR(36) NOT NULL, product_id CHAR(36) NOT NULL, product_name VARCHAR(150) NOT NULL, unit_price_xaf BIGINT NOT NULL, quantity INT NOT NULL, PRIMARY KEY(sale_id,product_id));
+CREATE TABLE audit_event (id CHAR(36) PRIMARY KEY, actor_id CHAR(36), action VARCHAR(80) NOT NULL, entity_type VARCHAR(80) NOT NULL, entity_id CHAR(36), details TEXT, created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);

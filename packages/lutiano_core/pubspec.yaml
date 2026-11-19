@@ -1,0 +1,34 @@
+name: lutiano_core
+description: Code shared by the LUTIANO Seller and Customer apps (API client, theme, formatting, common widgets).
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  http: ^1.2.2
+  http_parser: ^4.1.2
+  material_ui: ^1.11.1
+  firebase_core: ^5.2.0
+  firebase_messaging: ^17.1.0
+  firebase_crashlytics: ^6.1.0
+  flutter_secure_storage: ^11.2.0
+  printing: ^5.13.4
+  image_picker: ^1.2.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  generate: true
+  assets:
+    - assets/bean.png

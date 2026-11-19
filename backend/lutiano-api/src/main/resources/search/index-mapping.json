@@ -1,0 +1,65 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "analysis": {
+      "filter": {
+        "fr_stop": {"type": "stop", "stopwords": "_french_"},
+        "en_stop": {"type": "stop", "stopwords": "_english_"},
+        "fr_stem": {"type": "stemmer", "language": "light_french"},
+        "en_stem": {"type": "stemmer", "language": "light_english"},
+        "elision_fr": {"type": "elision", "articles": ["l","d","j","m","n","s","t","qu","c"], "articles_case": true},
+        "edge_2_15": {"type": "edge_ngram", "min_gram": 2, "max_gram": 15}
+      },
+      "normalizer": {
+        "ref_norm": {"type": "custom", "filter": ["lowercase", "asciifolding"]}
+      },
+      "analyzer": {
+        "text_fold": {"type": "custom", "tokenizer": "standard", "filter": ["elision_fr", "lowercase", "asciifolding"]},
+        "text_stem": {"type": "custom", "tokenizer": "standard", "filter": ["elision_fr", "lowercase", "asciifolding", "fr_stop", "en_stop", "fr_stem", "en_stem"]},
+        "autocomplete_index": {"type": "custom", "tokenizer": "standard", "filter": ["elision_fr", "lowercase", "asciifolding", "edge_2_15"]},
+        "autocomplete_search": {"type": "custom", "tokenizer": "standard", "filter": ["elision_fr", "lowercase", "asciifolding"]}
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "type": {"type": "keyword"},
+      "sourceId": {"type": "keyword"},
+      "module": {"type": "keyword"},
+      "title": {
+        "type": "text", "analyzer": "text_fold",
+        "fields": {
+          "autocomplete": {"type": "text", "analyzer": "autocomplete_index", "search_analyzer": "autocomplete_search"},
+          "stem": {"type": "text", "analyzer": "text_stem"}
+        }
+      },
+      "subtitle": {"type": "text", "analyzer": "text_fold"},
+      "content": {"type": "text", "analyzer": "text_fold", "fields": {"stem": {"type": "text", "analyzer": "text_stem"}}},
+      "reference": {"type": "keyword", "normalizer": "ref_norm"},
+      "tags": {"type": "keyword"},
+      "meta": {
+        "dynamic": "strict",
+        "properties": {
+          "status": {"type": "keyword"}, "category": {"type": "keyword"}, "kind": {"type": "keyword"},
+          "method": {"type": "keyword"}, "channel": {"type": "keyword"}, "tier": {"type": "keyword"},
+          "role": {"type": "keyword"}, "city": {"type": "keyword"}, "region": {"type": "keyword"},
+          "locationType": {"type": "keyword"}, "provider": {"type": "keyword"}, "event": {"type": "keyword"},
+          "eventType": {"type": "keyword"}, "operationId": {"type": "keyword"}, "sellerId": {"type": "keyword"},
+          "customerId": {"type": "keyword"}, "productId": {"type": "keyword"},
+          "sortOrder": {"type": "integer"}, "enabled": {"type": "boolean"},
+          "createdAt": {"type": "date"}, "updatedAt": {"type": "date"}
+        }
+      },
+      "perm": {
+        "dynamic": "strict",
+        "properties": {
+          "roles": {"type": "keyword"}, "sellerId": {"type": "keyword"}, "customerId": {"type": "keyword"},
+          "operationIds": {"type": "keyword"}, "public": {"type": "boolean"}, "status": {"type": "keyword"}
+        }
+      },
+      "indexedAt": {"type": "date"}
+    }
+  }
+}

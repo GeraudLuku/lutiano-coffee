@@ -1,0 +1,37 @@
+name: lutiano_customer
+description: "LUTIANO Coffee customer app (menu, scan to order, rewards)"
+publish_to: none
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.6.0 <4.0.0'
+  flutter: '>=3.27.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  lutiano_core:
+    path: ../../packages/lutiano_core
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  material_ui: ^1.11.1
+  http: ^1.2.2
+  crypto: ^3.0.6
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^7.5.0
+  shared_preferences: ^2.5.6
+  image_picker: ^1.2.4
+  google_sign_in: ^7.0.0
+  sign_in_with_apple: ^7.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  generate: true
+  uses-material-design: true

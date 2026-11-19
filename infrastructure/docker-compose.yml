@@ -1,0 +1,105 @@
+services:
+  mariadb:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: lutiano
+      MARIADB_USER: lutiano
+      MARIADB_PASSWORD: ${DB_PASSWORD:-local-lutiano}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-local-root}
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+  # S3-compatible object storage for product images (SeaweedFS, Apache-2.0).
+  # The access-key file is written from .env at start-up so credentials stay out of the repo.
+  storage:
+    image: chrislusf/seaweedfs:4.51
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        printf '{"identities":[{"name":"lutiano-api","credentials":[{"accessKey":"%s","secretKey":"%s"}],"actions":["Admin","Read","Write","List","Tagging"]}]}' "$$S3_ACCESS_KEY" "$$S3_SECRET_KEY" > /tmp/s3.json
+        exec weed server -dir=/data -s3 -s3.port=8333 -s3.config=/tmp/s3.json -volume.max=0 -master.volumeSizeLimitMB=1024
+    environment:
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-lutiano}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-local-storage-secret}
+    ports:
+      - "${S3_PORT:-9000}:8333"
+    volumes:
+      - storage_data:/data
+  # Search: Elasticsearch (the index; MariaDB stays the source of truth) and Kibana (inspection UI).
+  # Locally security is on (passwords) but HTTP TLS is off on the private network and the ports are bound to localhost.
+  # For production enable HTTPS (xpack.security.http.ssl.*) and point ELASTICSEARCH_URL at it; see docs/search/.
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.5
+    environment:
+      discovery.type: single-node
+      xpack.security.enabled: "true"
+      xpack.security.http.ssl.enabled: "false"
+      xpack.ml.enabled: "false"
+      cluster.routing.allocation.disk.threshold_enabled: "false"
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-local-elastic}
+    mem_limit: 1g
+    ports:
+      - "127.0.0.1:${ES_PORT:-9200}:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -u elastic:$${ELASTIC_PASSWORD} http://localhost:9200/_cluster/health | grep -qE '\"status\":\"(green|yellow)\"'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+  # One-shot: gives Kibana its own account and creates the application's least-privilege search user.
+  # The elastic superuser is used only inside this container.
+  elasticsearch-setup:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.5
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: "no"
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        E=http://elasticsearch:9200
+        A="-u elastic:$$ELASTIC_PASSWORD -H Content-Type:application/json"
+        curl -sf $$A -X POST $$E/_security/user/kibana_system/_password -d "{\"password\":\"$$KIBANA_SYSTEM_PASSWORD\"}" > /dev/null
+        curl -sf $$A -X PUT $$E/_security/role/lutiano_search -d '{"cluster":["monitor"],"indices":[{"names":["lutiano-search*"],"privileges":["all"]}]}' > /dev/null
+        curl -sf $$A -X PUT $$E/_security/user/lutiano_app -d "{\"password\":\"$$ES_APP_PASSWORD\",\"roles\":[\"lutiano_search\"]}" > /dev/null
+        echo "Elasticsearch accounts ready"
+    environment:
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-local-elastic}
+      KIBANA_SYSTEM_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-local-kibana-system}
+      ES_APP_PASSWORD: ${ES_APP_PASSWORD:-local-search-app}
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.5
+    depends_on:
+      elasticsearch-setup:
+        condition: service_completed_successfully
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      ELASTICSEARCH_USERNAME: kibana_system
+      ELASTICSEARCH_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-local-kibana-system}
+      XPACK_SECURITY_ENCRYPTIONKEY: ${KIBANA_ENCRYPTION_KEY:-local-kibana-encryption-key-0123456789}
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: ${KIBANA_ENCRYPTION_KEY:-local-kibana-encryption-key-0123456789}
+      XPACK_REPORTING_ENCRYPTIONKEY: ${KIBANA_ENCRYPTION_KEY:-local-kibana-encryption-key-0123456789}
+      NODE_OPTIONS: --max-old-space-size=768
+    mem_limit: 1g
+    ports:
+      - "127.0.0.1:${KIBANA_PORT:-5601}:5601"
+volumes:
+  mariadb_data:
+  redis_data:
+  storage_data:
+  elasticsearch_data:

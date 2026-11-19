@@ -1,0 +1,1517 @@
+{
+  "@@locale": "fr",
+  "enterYourEmail": "Saisissez votre e-mail.",
+  "enterTheCodeFromThe": "Saisissez le code reçu par SMS.",
+  "chooseAPasswordOfAt": "Choisissez un mot de passe d'au moins 10 caractères.",
+  "passwordChangedSignInWith": "Mot de passe modifié. Connectez-vous avec votre nouveau mot de passe.",
+  "forgotPassword": "Mot de passe oublié",
+  "enterTheEmailOfYour": "Saisissez l'e-mail de votre compte vendeur. Nous enverrons un code par SMS au numéro de téléphone enregistré.",
+  "email": "E-mail",
+  "ifAnAccountWithA": "Si un compte avec un numéro de téléphone existe pour cet e-mail, un code a été envoyé par SMS. Il est valable 5 minutes. Pas de SMS ? Demandez à votre administrateur de réinitialiser votre accès.",
+  "codeFromTheSms": "Code reçu par SMS",
+  "newPassword10Characters": "Nouveau mot de passe (10 caractères ou plus)",
+  "useADifferentEmail": "Utiliser un autre e-mail",
+  "lutiano": "LUTIANO",
+  "welcomeBack": "Bon retour 👋",
+  "signInToYourSeller": "Connectez-vous à votre compte vendeur",
+  "yourSessionEndedPleaseSign": "Votre session a expiré. Veuillez vous reconnecter.",
+  "password": "Mot de passe",
+  "forgotPassword2": "Mot de passe oublié ?",
+  "scanCustomerQr": "Scanner le QR du client",
+  "theCameraIsNotAvailable": "La caméra n'est pas disponible. Autorisez l'accès à la caméra dans les Réglages, puis réessayez.",
+  "pointTheCameraAtThe": "Dirigez la caméra vers le QR de fidélité du client.",
+  "saleDetails": "Détails de la vente",
+  "dateTime": "Date et heure",
+  "salesOperation": "Opération de vente",
+  "paymentMethod": "Mode de paiement",
+  "customer": "Client",
+  "loyaltyPointsEarned": "Points de fidélité gagnés",
+  "cashReceived": "Espèces reçues",
+  "changeGiven": "Monnaie rendue",
+  "totalAmount": "Montant total",
+  "viewPrintReceipt": "Voir / imprimer le reçu",
+  "salesHistory": "Historique des ventes",
+  "sales": "Ventes",
+  "xaf": "XAF",
+  "items": "Articles",
+  "noSalesInThisPeriod": "Aucune vente sur cette période",
+  "completedSalesWillAppearHere": "Les ventes terminées apparaîtront ici.",
+  "newSale": "Nouvelle vente",
+  "quickActions": "Actions rapides",
+  "salesTrend7Days": "Tendance des ventes (7 jours)",
+  "noSalesOperationAssigned": "Aucun point de vente assigné",
+  "askYourManagerToAssign": "Demandez à votre responsable de vous assigner à un point de vente actif, puis actualisez.",
+  "refresh": "Actualiser",
+  "openYourCashShift": "Ouvrez votre caisse",
+  "cashSalesAreRecordedAgainst": "Les ventes en espèces sont enregistrées sur une caisse ouverte. En ouvrir une maintenant ?",
+  "notNow": "Pas maintenant",
+  "openShift": "Ouvrir la caisse",
+  "myDay": "Ma journée",
+  "todaySSales": "Ventes du jour",
+  "orders": "Commandes",
+  "myCommission": "Ma commission",
+  "pointsIssued": "Points attribués",
+  "receiveStock": "Réceptionner du stock",
+  "countWhatArrivedBeforeConfirming": "Comptez ce qui est arrivé avant de confirmer. Le stock en transit ne peut pas être vendu avant votre confirmation.",
+  "noDeliveriesWaiting": "Aucune livraison en attente",
+  "stockSentToYourOperation": "Le stock envoyé à votre point de vente apparaîtra ici.",
+  "inTransit": "En transit",
+  "confirmReceipt": "Confirmer la réception",
+  "explainWhyTheQuantityIs": "Expliquez pourquoi la quantité est différente.",
+  "quantityReceived": "Quantité reçue",
+  "reasonMissingDamaged": "Motif (manquant, abîmé…)",
+  "cancel": "Annuler",
+  "inventory": "Inventaire",
+  "myInventory": "Mon inventaire",
+  "unitsInStock": "Unités en stock",
+  "lowStock": "Stock bas",
+  "stockValueSellingPrice": "Valeur du stock (prix de vente)",
+  "viewInventory": "Voir l'inventaire",
+  "allProductsAtThisOperation": "Tous les produits de ce point de vente",
+  "stockMovements": "Mouvements de stock",
+  "receivedStockAndSales": "Stock reçu et ventes",
+  "lowStockAlerts": "Alertes de stock bas",
+  "confirmDeliveriesFromTheCentral": "Confirmez les livraisons du dépôt central",
+  "allStockLevelsAreHealthy": "Tous les niveaux de stock sont bons",
+  "askYourInventoryManagerFor": "Demandez un réapprovisionnement à votre gestionnaire de stock pour éviter les ruptures.",
+  "productDetails": "Détails du produit",
+  "currentStock": "Stock actuel",
+  "minimumLevel": "Niveau minimum",
+  "salesPrice": "Prix de vente",
+  "sku": "Référence",
+  "recentMovements": "Mouvements récents",
+  "noMovementsYet": "Aucun mouvement pour l'instant",
+  "searchProduct": "Rechercher un produit…",
+  "noProductsMatch": "Aucun produit ne correspond",
+  "all": "Tous",
+  "inReceived": "Entrées (reçues)",
+  "outSold": "Sorties (vendues)",
+  "noMovementsToShow": "Aucun mouvement à afficher",
+  "stock": "Stock : ",
+  "mySalesOperation": "Mon point de vente",
+  "today": "Aujourd'hui",
+  "last7Days": "7 derniers jours",
+  "thisMonth": "Ce mois-ci",
+  "transactions": "Transactions",
+  "myQrCode": "Mon code QR",
+  "showMyPermanentQrCode": "Afficher mon code QR permanent",
+  "assignedProducts": "Produits assignés",
+  "productsAndStockICan": "Produits et stock que je peux vendre",
+  "switchOperation": "Changer de point de vente",
+  "inactive": "Inactif",
+  "chooseSalesOperation": "Choisir le point de vente",
+  "switchingEmptiesTheCurrentCart": "Le changement vide le panier en cours.",
+  "showThisQrCodeTo": "Montrez ce code QR aux clients pour démarrer un achat à votre point de vente.",
+  "qrCodeUnavailableCheckYour": "Code QR indisponible. Vérifiez votre connexion.",
+  "thisIsYourPermanentQr": "Voici votre code QR permanent. Il identifie le point de vente, pas vous ni une vente, et reste le même si les vendeurs changent.",
+  "aboutLutiano": "À propos de LUTIANO",
+  "sellerOperationsApp": "Application Vendeur / Opérations",
+  "licenses": "Licences",
+  "thirdPartySoftwareAndCredits": "Logiciels tiers et crédits",
+  "passwordChanged": "Mot de passe modifié.",
+  "security": "Sécurité",
+  "keepYourAccountSecureUse": "Protégez votre compte. Utilisez au moins 10 caractères et ne partagez pas votre mot de passe.",
+  "currentPassword": "Mot de passe actuel",
+  "newPassword": "Nouveau mot de passe",
+  "confirmNewPassword": "Confirmer le nouveau mot de passe",
+  "myProfile": "Mon profil",
+  "phone": "Téléphone",
+  "myRole": "Mon rôle",
+  "operation": "Point de vente",
+  "changePassword": "Changer le mot de passe",
+  "updateYourAccountPassword": "Mettre à jour le mot de passe de votre compte",
+  "helpSupport": "Aide et assistance",
+  "getHelpFromTheLutiano": "Obtenir de l'aide auprès de l'équipe LUTIANO",
+  "versionAndLegalInformation": "Version et informations légales",
+  "signOut": "Se déconnecter",
+  "yourNamePhoneAndRole": "Votre nom, votre téléphone et votre rôle sont gérés par votre administrateur.",
+  "forAccountStockOrPayment": "Pour un problème de compte, de stock ou de paiement, contactez votre responsable des opérations ou votre administrateur. Il peut réinitialiser votre accès, vous assigner un point de vente et examiner les problèmes de stock ou de caisse.",
+  "ok": "OK",
+  "signOut2": "Se déconnecter ?",
+  "signOut3": "Se déconnecter",
+  "myRolePermissions": "Mon rôle et mes autorisations",
+  "operationsRole": "Rôle opérationnel",
+  "roleDescription": "Description du rôle",
+  "myPermissions": "Mes autorisations",
+  "permissionsAreEnforcedByThe": "Les autorisations sont appliquées par le serveur. Votre administrateur gère votre rôle et votre point de vente.",
+  "yourCart": "Votre panier",
+  "clear": "Vider",
+  "yourCartIsEmpty": "Votre panier est vide",
+  "addProducts": "Ajouter des produits",
+  "orderSummary": "Récapitulatif de la commande",
+  "total": "Total",
+  "pricesAreSetCentrallyAnd": "Les prix sont fixés centralement et ne peuvent pas être modifiés à l'encaissement.",
+  "proceedToPayment": "Passer au paiement",
+  "notEnoughStockReduceThe": "Stock insuffisant — réduisez la quantité.",
+  "remove": "Retirer",
+  "comingSoon": "Bientôt disponible",
+  "collectPayment": "Encaisser le paiement",
+  "paymentMethod2": "Mode de paiement",
+  "amountReceivedCash": "Montant reçu (espèces)",
+  "changeToGive": "Monnaie à rendre",
+  "confirmOnlyAfterYouHave": "Ne confirmez qu'après avoir reçu l'argent. La vente est enregistrée quand le serveur la confirme.",
+  "selectProducts": "Choisir les produits",
+  "noProducts": "Aucun produit",
+  "nothingMatchesOrNoStock": "Rien ne correspond, ou aucun stock n'a encore été alloué à ce point de vente.",
+  "viewCart": "Voir le panier",
+  "saleCompleted": "Vente terminée !",
+  "thePurchaseHasBeenRecorded": "L'achat a été enregistré avec succès.",
+  "saleReference": "Référence de la vente",
+  "viewReceipt": "Voir le reçu",
+  "backToHome": "Retour à l'accueil",
+  "customerOptional": "Client (facultatif)",
+  "removeCustomer": "Retirer le client",
+  "home": "Accueil",
+  "profile": "Profil",
+  "enterTheAmountNeeded": "Saisissez le montant nécessaire.",
+  "sayWhatTheCashIs": "Indiquez à quoi sert l'argent.",
+  "requestCashOutflow": "Demander une sortie de caisse",
+  "cashLeavesYourDrawerOnly": "L'argent ne quitte votre caisse qu'après l'accord d'un responsable.",
+  "purpose": "Objet",
+  "amount": "Montant",
+  "whatIsItFor": "À quoi sert-il ?",
+  "enterTheAmountYouAre": "Saisissez le montant que vous remettez.",
+  "chooseWhoReceivesTheCash": "Choisissez qui reçoit l'argent.",
+  "enterTheDepositSlipReference": "Saisissez la référence du bordereau de dépôt.",
+  "recordRemittance": "Enregistrer la remise",
+  "handToManager": "Remettre à un responsable",
+  "bankDeposit": "Dépôt bancaire",
+  "handedTo": "Remis à",
+  "depositSlipReference": "Référence du bordereau",
+  "theCashLeavesYourDrawer": "L'argent quitte votre caisse maintenant. Il reste en attente jusqu'à ce que le destinataire confirme le montant.",
+  "enterTheCashYouCounted": "Saisissez les espèces que vous avez comptées.",
+  "explainTheDifference": "Expliquez la différence.",
+  "recountCash": "Recompter la caisse",
+  "expectedCash": "Espèces attendues",
+  "yourFirstCount": "Votre premier comptage",
+  "countedCashNow": "Espèces comptées maintenant",
+  "reasonForTheDifference": "Motif de la différence",
+  "cashShift": "Caisse",
+  "noOpenCashShift": "Aucune caisse ouverte",
+  "openAShiftWithYour": "Ouvrez une caisse avec votre fond de caisse avant votre première vente.",
+  "previousShifts": "Caisses précédentes",
+  "expectedInYourDrawer": "Attendu dans votre caisse",
+  "opened": "Ouverte",
+  "openingFloat": "Fond de caisse",
+  "refundsPaid": "− Remboursements payés",
+  "approvedOutflows": "− Sorties approuvées",
+  "remitted": "− Remis",
+  "expectedCash2": "= Espèces attendues",
+  "requestOutflow": "Demander une sortie",
+  "closeShift": "Fermer la caisse",
+  "outflowRequests": "Demandes de sortie",
+  "cancelRequest": "Annuler la demande",
+  "remittances": "Remises",
+  "cashLedger": "Journal de caisse",
+  "awaitingApproval": "En attente d'approbation",
+  "approved": "Approuvée",
+  "rejected": "Refusée",
+  "cancelled": "Annulée",
+  "awaitingConfirmation": "En attente de confirmation",
+  "confirmed": "Confirmée",
+  "disputed": "Contestée",
+  "managerReview": "Examen par un responsable",
+  "recountRequested": "Recomptage demandé",
+  "reviewed": "Examinée",
+  "balanced": "Équilibrée",
+  "openCashShift": "Ouvrir la caisse",
+  "countTheCashInYour": "Comptez les espèces de votre caisse avant votre première vente.",
+  "explainTheDifferenceBeforeClosing": "Expliquez la différence avant de fermer.",
+  "closeCashShift": "Fermer la caisse",
+  "countedCash": "Espèces comptées",
+  "coffeeBusinessOs": "Coffee Business OS",
+  "retry": "Réessayer",
+  "addToCart": "Ajouter au panier",
+  "inStock": "En stock",
+  "outOfStock": "Rupture de stock",
+  "statusActive": "Actif",
+  "statusCompleted": "Terminée",
+  "appTitle": "LUTIANO Vendeur",
+  "sending": "Envoi…",
+  "sendCode": "Envoyer le code",
+  "showPassword": "Afficher le mot de passe",
+  "hidePassword": "Masquer le mot de passe",
+  "saving": "Enregistrement…",
+  "setNewPassword": "Définir le nouveau mot de passe",
+  "enterYourEmailShort": "Saisissez votre e-mail",
+  "enterYourPassword": "Saisissez votre mot de passe",
+  "signingIn": "Connexion…",
+  "signIn": "Se connecter",
+  "products": "Produits",
+  "myOperation": "Mon point de vente",
+  "noAlerts": "Aucune alerte",
+  "cashShiftClosed": "Caisse fermée",
+  "openAShiftToStartSelling": "Ouvrez une caisse pour commencer à vendre",
+  "open": "Ouvrir",
+  "close": "Fermer",
+  "receiptConfirmedDifference": "Réception confirmée. La différence a été signalée.",
+  "confirm": "Confirmer",
+  "openingShift": "Ouverture…",
+  "closing": "Fermeture…",
+  "enterYourCurrentPassword": "Saisissez votre mot de passe actuel",
+  "useAtLeast10": "Utilisez au moins 10 caractères",
+  "use72OrFewer": "Utilisez 72 caractères ou moins",
+  "passwordsDoNotMatch": "Les mots de passe ne correspondent pas",
+  "changePasswordButton": "Changer le mot de passe",
+  "seller": "Vendeur",
+  "notAssigned": "Non assigné",
+  "notSet": "Non renseigné",
+  "cartWillBeCleared": "Votre panier en cours sera vidé.",
+  "needToSignInAgain": "Vous devrez vous reconnecter pour enregistrer des ventes.",
+  "permRecordCashSales": "Enregistrer des ventes en espèces à mon point de vente",
+  "permOpenCloseShift": "Ouvrir et fermer ma caisse",
+  "permViewInventory": "Voir l'inventaire assigné et les mouvements de stock",
+  "permConfirmDeliveries": "Confirmer les livraisons de stock et signaler les différences",
+  "permShowQr": "Afficher le code QR de mon point de vente",
+  "permViewOwnSales": "Voir mon historique de ventes et mes reçus",
+  "permChangePrices": "Modifier les prix ou appliquer des remises",
+  "permApproveRefunds": "Approuver des remboursements ou des ajustements de stock",
+  "permManageProducts": "Gérer les produits, les utilisateurs ou les points de vente",
+  "roleDescMobile": "Vend les produits LUTIANO sur des lieux mobiles (événements, bureaux, points éphémères) et gère le stock et l'argent alloués au point de vente mobile.",
+  "roleDescMarket": "Vend les produits LUTIANO directement sur les marchés et sur le terrain, et gère le stock et l'argent alloués à l'agent.",
+  "roleDescFixed": "Vend les produits LUTIANO dans un point de vente fixe et gère son stock et sa caisse.",
+  "recordingSale": "Enregistrement de la vente…",
+  "confirmPayment": "Confirmer le paiement",
+  "checking": "Vérification…",
+  "request": "Demander",
+  "recording": "Enregistrement…",
+  "record": "Enregistrer",
+  "submitRecount": "Envoyer le recomptage",
+  "recountSubmitted": "Recomptage envoyé.",
+  "shiftOpened": "Caisse ouverte.",
+  "outflowRequested": "Sortie demandée. Attendez l'approbation avant de prendre l'argent.",
+  "remittanceRecorded": "Remise enregistrée.",
+  "notCounted": "Non comptée",
+  "shiftClosedMatches": "Caisse fermée. Les espèces correspondent.",
+  "salesTrend7Days2": "Tendance des ventes (7 jours)",
+  "decreaseQuantity": "Diminuer la quantité",
+  "increaseQuantity": "Augmenter la quantité",
+  "periodToday": "Aujourd'hui",
+  "periodWeek": "Cette semaine",
+  "periodMonth": "Ce mois-ci",
+  "periodCustom": "Personnalisée",
+  "pointsEarnedValue": "+{points} pts",
+  "@pointsEarnedValue": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "itemsCount": "Articles ({count})",
+  "@itemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "saleSubtitle": "{time} · Espèces · {operation}",
+  "@saleSubtitle": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "operation": {
+        "type": "String"
+      }
+    }
+  },
+  "pointsValue": "{points} pts",
+  "@pointsValue": {
+    "placeholders": {
+      "points": {
+        "type": "String"
+      }
+    }
+  },
+  "deliveriesToConfirm": "{count, plural, =1{1 livraison à confirmer} other{{count} livraisons à confirmer}}",
+  "@deliveriesToConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "shiftOpenSince": "Caisse ouverte depuis {time}",
+  "@shiftOpenSince": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "expectedCashValue": "Espèces attendues : {amount}",
+  "@expectedCashValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "unitsSentAt": "{count} unités · envoyées {when}",
+  "@unitsSentAt": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "enterQuantityBetween": "Saisissez une quantité entre 0 et {max}.",
+  "@enterQuantityBetween": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "receiptConfirmedUnits": "Réception confirmée. {count} unités ajoutées à votre stock.",
+  "@receiptConfirmedUnits": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmProduct": "Confirmer {product}",
+  "@confirmProduct": {
+    "placeholders": {
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "unitsDispatched": "{count} unités ont été expédiées.",
+  "@unitsDispatched": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "productsNeedAttention": "{count, plural, =1{1 produit demande votre attention} other{{count} produits demandent votre attention}}",
+  "@productsNeedAttention": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stockAtOrBelow": "Le stock est à {level} ou moins. Demandez un réapprovisionnement à votre gestionnaire de stock.",
+  "@stockAtOrBelow": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "minLevelSuffix": " · min {min}",
+  "@minLevelSuffix": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "operationsAssigned": "{count} points de vente vous sont assignés",
+  "@operationsAssigned": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "assignedSellers": "Vendeurs assignés ({count})",
+  "@assignedSellers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "qrCodeFor": "Code QR de {name}",
+  "@qrCodeFor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "versionValue": "Version {version}",
+  "@versionValue": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "cashReceivedAtLeast": "Les espèces reçues doivent être d'au moins {amount}.",
+  "@cashReceivedAtLeast": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "messageCartSavedDraft": "{message} Votre panier est enregistré comme brouillon.",
+  "@messageCartSavedDraft": {
+    "placeholders": {
+      "message": {
+        "type": "String"
+      }
+    }
+  },
+  "availableCount": "{count} disponibles",
+  "@availableCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "drawerShouldHold": "Votre caisse ne devrait contenir que {amount}.",
+  "@drawerShouldHold": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "inYourDrawer": "Dans votre caisse : {amount}",
+  "@inYourDrawer": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "managerNote": "Responsable : {note}",
+  "@managerNote": {
+    "placeholders": {
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "recountAsked": "Un responsable vous demande de recompter la caisse du {date}.",
+  "@recountAsked": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "cashSalesCount": "+ Ventes en espèces ({count})",
+  "@cashSalesCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "receivedAmount": "Reçu {amount}",
+  "@receivedAmount": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftExpected": "{date} · {amount} attendus",
+  "@shiftExpected": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftClosedVariance": "Caisse fermée avec un écart de {amount}. Un responsable l'examinera.",
+  "@shiftClosedVariance": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "typeFixedPos": "Point de vente fixe",
+  "typeMobile": "Opération mobile",
+  "typeMarket": "Agent de marché",
+  "roleFixedPos": "Barista point de vente fixe",
+  "roleMobile": "Barista mobile",
+  "roleMarket": "Agent de vente sur les marchés",
+  "ledgerOpeningFloat": "Fond de caisse",
+  "ledgerCashSale": "Vente en espèces",
+  "ledgerRefundPaid": "Remboursement payé",
+  "ledgerOutflow": "Sortie approuvée",
+  "ledgerRemittance": "Remise",
+  "catSupplies": "Fournitures",
+  "catTransport": "Transport",
+  "catMaintenance": "Entretien",
+  "catCleaning": "Nettoyage",
+  "catOther": "Autre",
+  "greetingMorning": "Bonjour,",
+  "greetingAfternoon": "Bon après-midi,",
+  "greetingEvening": "Bonsoir,",
+  "cash": "Espèces",
+  "mtnMomo": "MTN MoMo",
+  "orangeMoney": "Orange Money",
+  "productsRunningLow": "{count, plural, =1{1 produit est bientôt en rupture} other{{count} produits sont bientôt en rupture}}",
+  "@productsRunningLow": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stockInTitle": "Entrée en stock · {product}",
+  "@stockInTitle": {
+    "placeholders": {
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "stockOutTitle": "Sortie de stock · {product}",
+  "@stockOutTitle": {
+    "placeholders": {
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "saleReferenceValue": "Vente {reference}",
+  "@saleReferenceValue": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "varianceValue": "Écart : {amount}",
+  "@varianceValue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "countedVariance": "Compté {counted} · écart {variance}",
+  "@countedVariance": {
+    "placeholders": {
+      "counted": {
+        "type": "String"
+      },
+      "variance": {
+        "type": "String"
+      }
+    }
+  },
+  "bankDepositRef": "Dépôt bancaire · {reference}",
+  "@bankDepositRef": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "handedToName": "Remis à {name}",
+  "@handedToName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "manager": "responsable",
+  "errNetwork": "Impossible de joindre le serveur LUTIANO. Vérifiez votre connexion et réessayez.",
+  "errSessionExpired": "Votre session a expiré. Reconnectez-vous.",
+  "errForbidden": "Vous n'avez pas l'autorisation de faire cela.",
+  "errGeneric": "Une erreur est survenue ({status}). Réessayez.",
+  "@errGeneric": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "errUnexpected": "Une erreur est survenue. Réessayez.",
+  "loading": "Chargement",
+  "loadingMore": "Chargement…",
+  "viewAllShifts": "Toutes les caisses",
+  "viewCashLedger": "Voir le journal de caisse",
+  "noShiftsYet": "Aucune caisse pour l'instant",
+  "noLedgerEntries": "Aucun mouvement de caisse pour l'instant",
+  "preparingReceipt": "Préparation du reçu…",
+  "totalReceived": "Total reçu",
+  "consumedToday": "Consommé aujourd'hui",
+  "consumptionDetail": "Détail de la consommation",
+  "linkedToSale": "Lié à la vente",
+  "dateAndTime": "Date et heure",
+  "productLabel": "Produit",
+  "quantityConsumed": "Quantité consommée",
+  "remainingStock": "Stock restant",
+  "viewSaleDetails": "Voir la vente",
+  "inventorySummary": "Résumé de l'inventaire",
+  "stockInReceived": "Entrées (reçues)",
+  "stockOutConsumed": "Sorties (consommées)",
+  "netMovement": "Mouvement net",
+  "topConsumedProducts": "Produits les plus consommés",
+  "nothingConsumedInPeriod": "Rien n'a été consommé sur cette période",
+  "receivedConsumedAndTop": "Reçu, consommé et produits les plus vendus",
+  "stockRequests": "Demandes de stock",
+  "stockRequestsSubtitle": "Demandez et suivez le réapprovisionnement",
+  "totalRequests": "Demandes au total",
+  "requestsApproved": "Approuvées",
+  "requestsPending": "En attente",
+  "requestsRejected": "Refusées",
+  "requestsInFulfillment": "En préparation",
+  "requestsCompleted": "Terminées",
+  "requestsCancelled": "Annulées",
+  "requestStock": "Demander du stock",
+  "myRequests": "Mes demandes",
+  "pendingApprovals": "Approbations en attente",
+  "searchByReference": "Rechercher par référence…",
+  "noRequestsYet": "Aucune demande de stock",
+  "noRequestsMatch": "Aucune demande ne correspond",
+  "requestsWillAppearHere": "Les demandes que vous envoyez apparaîtront ici.",
+  "requestDetails": "Détails de la demande",
+  "requestInformation": "Informations sur la demande",
+  "requestedDelivery": "Livraison souhaitée",
+  "asSoonAsPossible": "Dès que possible",
+  "requestReason": "Motif",
+  "totalQuantity": "Quantité totale",
+  "awaitingReview": "Votre demande est en cours d'examen par l'équipe des opérations.",
+  "stockBeingPrepared": "Le stock est en cours de préparation.",
+  "duplicateAndModify": "Dupliquer et modifier",
+  "fulfillmentProgress": "Avancement",
+  "stepApproved": "Approuvée",
+  "stepOnItsWay": "En route",
+  "stepAllocated": "Livrée",
+  "confirmDeliveriesNote": "Confirmez chaque livraison dans Réception de stock à son arrivée.",
+  "selectProductsToRequest": "Choisissez les produits à demander",
+  "next": "Suivant",
+  "requestSummary": "Récapitulatif",
+  "reviewAndSubmit": "Vérifiez et envoyez votre demande",
+  "submitRequest": "Envoyer la demande",
+  "sendingRequest": "Envoi…",
+  "reasonOptional": "Motif (facultatif)",
+  "chooseDate": "Choisir une date",
+  "startFromPrevious": "Partir d'une demande précédente",
+  "previousRequests": "Demandes précédentes",
+  "newStockRequest": "Nouvelle demande de stock",
+  "pickAtLeastOneProduct": "Choisissez au moins un produit.",
+  "cannotRequestStock": "Votre rôle ne permet pas de demander du stock. Voyez avec votre responsable stock.",
+  "noProductsToRequest": "Aucun produit à afficher",
+  "requestedItems": "Articles demandés ({count})",
+  "@requestedItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "productsSelected": "{count, plural, =1{1 produit sélectionné} other{{count} produits sélectionnés}}",
+  "@productsSelected": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalQuantityValue": "Quantité totale : {count}",
+  "@totalQuantityValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "requestItemsLine": "{when} · {count, plural, =1{1 article} other{{count} articles}}",
+  "@requestItemsLine": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "requestedOnWhen": "Demandée le {when}",
+  "@requestedOnWhen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "approvedOnWhen": "Approuvée le {when}",
+  "@approvedOnWhen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "rejectedOnWhen": "Refusée le {when}",
+  "@rejectedOnWhen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "cancelledOnWhen": "Annulée le {when}",
+  "@cancelledOnWhen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "completedOnWhen": "Terminée le {when}",
+  "@completedOnWhen": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "requestReasonValue": "Motif : {reason}",
+  "@requestReasonValue": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "requestSubmitted": "Demande {reference} envoyée",
+  "@requestSubmitted": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "stockNow": "Stock : {count}",
+  "@stockNow": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "receivedOfSent": "{received} sur {sent} reçus",
+  "@receivedOfSent": {
+    "placeholders": {
+      "received": {
+        "type": "int"
+      },
+      "sent": {
+        "type": "int"
+      }
+    }
+  },
+  "needsAttention": "À traiter",
+  "allOutflowRequests": "Toutes les demandes de sortie",
+  "allRemittances": "Toutes les remises",
+  "noOutflowsYet": "Aucune demande de sortie",
+  "noRemittancesYet": "Aucune remise",
+  "shiftDetails": "Détails du shift",
+  "reconciliation": "Rapprochement",
+  "variance": "Écart",
+  "countHistory": "Historique des comptages",
+  "closingCount": "Comptage de clôture",
+  "recountLabel": "Nouveau comptage",
+  "managerReviewTitle": "Revue du responsable",
+  "cashMovements": "Mouvements de caisse",
+  "shiftNotReviewed": "Aucune revue nécessaire : le comptage correspond.",
+  "startRecount": "Compter à nouveau",
+  "outflowsAwaiting": "{count, plural, =1{1 demande de sortie en attente d'approbation} other{{count} demandes de sortie en attente d'approbation}}",
+  "@outflowsAwaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "remittancesAwaiting": "{count, plural, =1{1 remise en attente de confirmation} other{{count} remises en attente de confirmation}} · {amount}",
+  "@remittancesAwaiting": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "remittancesDisputed": "{count, plural, =1{1 remise contestée} other{{count} remises contestées}}",
+  "@remittancesDisputed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "recountsRequested": "{count, plural, =1{1 nouveau comptage demandé} other{{count} nouveaux comptages demandés}}",
+  "@recountsRequested": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "closeRemindOutflows": "{count, plural, =1{1 demande de sortie est encore en attente et sera retirée à la clôture.} other{{count} demandes de sortie sont encore en attente et seront retirées à la clôture.}}",
+  "@closeRemindOutflows": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "closeRemindRemittances": "{count, plural, =1{1 remise} other{{count} remises}} ({amount}) pas encore confirmée par le destinataire. Relancez avant de partir.",
+  "@closeRemindRemittances": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "shiftOpenedEarlier": "Ce shift est ouvert depuis le {when}. Comptez la caisse et clôturez-le.",
+  "@shiftOpenedEarlier": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "reviewedByWhen": "Revu par {name} le {when}",
+  "@reviewedByWhen": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "countedByWhen": "{name} · {when}",
+  "@countedByWhen": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "expectedCountedValue": "Attendu {expected} · compté {counted}",
+  "@expectedCountedValue": {
+    "placeholders": {
+      "expected": {
+        "type": "String"
+      },
+      "counted": {
+        "type": "String"
+      }
+    }
+  },
+  "decidedByNote": "{name} : {note}",
+  "@decidedByNote": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "note": {
+        "type": "String"
+      }
+    }
+  },
+  "earnings": "Gains",
+  "earningsSubtitle": "Commissions, primes et paiements",
+  "totalEarnings": "Gains totaux",
+  "commissionsLabel": "Commissions",
+  "bonusesLabel": "Primes",
+  "adjustmentsLabel": "Ajustements",
+  "provisionalChip": "Provisoire",
+  "finalChip": "Définitif",
+  "provisionalNote": "Provisoire : les montants deviennent définitifs quand l'équipe d'administration arrête le mois.",
+  "stillToBePaid": "Reste à vous payer",
+  "viewBreakdown": "Voir le détail",
+  "earningsByPeriod": "Gains par période",
+  "salesThatEarned": "Ventes ayant rapporté une commission",
+  "earningsByOperation": "Gains par opération",
+  "trendsAndAnalytics": "Tendances et analyses",
+  "commissionRulesTitle": "Règles de commission",
+  "earningsStatement": "Relevé de gains",
+  "commissionBreakdown": "Détail des commissions",
+  "totalCommissions": "Commissions totales",
+  "bySource": "Par source",
+  "productSales": "Ventes de produits",
+  "addOnSales": "Ventes de suppléments",
+  "bonusesAndAdjustments": "Primes et ajustements",
+  "byProductTop": "Par produit (top 5)",
+  "noEarningsThisMonth": "Aucun gain ce mois-ci",
+  "periodDaily": "Jour",
+  "periodWeekly": "Semaine",
+  "periodMonthly": "Mois",
+  "earningDetails": "Détail du gain",
+  "saleInformation": "Informations sur la vente",
+  "saleAmount": "Montant de la vente",
+  "myEarnings": "Mes gains",
+  "refundedCommission": "Repris après un remboursement",
+  "netCommission": "Commission nette",
+  "noSalesEarnedYet": "Aucune commission ce mois-ci",
+  "payoutsTitle": "Paiements et historique",
+  "totalPaidOut": "Total payé",
+  "payoutCompleted": "Terminés",
+  "payoutPending": "En attente",
+  "payoutCancelled": "Annulés",
+  "noPayoutsYet": "Aucun paiement",
+  "payoutDetails": "Détails du paiement",
+  "currentInformation": "Informations",
+  "payoutDate": "Date du paiement",
+  "requestedOn": "Demandé le",
+  "referenceLabel": "Référence",
+  "accountLabel": "Compte",
+  "amountBreakdown": "Détail du montant",
+  "payoutAmount": "Montant du paiement",
+  "statusLabel": "Statut",
+  "monthStatement": "Gains du mois",
+  "earningsAnalytics": "Analyse des gains",
+  "keyInsights": "Points clés",
+  "legendEarnings": "Gains",
+  "legendCommissions": "Commissions",
+  "noAnalyticsYet": "Pas encore assez de gains pour afficher une tendance.",
+  "commissionRate": "Taux de commission",
+  "myOperations": "Mes opérations",
+  "noOperationEarnings": "Aucune vente ce mois-ci",
+  "statementIntro": "Générez et téléchargez votre relevé de gains pour une période.",
+  "selectPeriod": "Choisir la période",
+  "statementIncludes": "Le relevé contient",
+  "sectionSummary": "Gains totaux (résumé)",
+  "sectionBreakdown": "Détail des commissions",
+  "sectionBonuses": "Primes",
+  "sectionAdjustments": "Ajustements",
+  "sectionSales": "Résumé des ventes (nombre et montant)",
+  "exportPdf": "Exporter le relevé (PDF)",
+  "preparingStatement": "Préparation du relevé…",
+  "chooseOneSection": "Choisissez au moins une section.",
+  "last3Months": "3 derniers mois",
+  "last6Months": "6 derniers mois",
+  "last12Months": "12 derniers mois",
+  "rulesIntro": "Vos gains sont calculés selon les règles de commission et de primes fixées par LUTIANO pour votre rôle.",
+  "rulesNote": "Seules les ventes validées et non remboursées comptent. Un remboursement reprend la commission correspondante.",
+  "noRulesForRole": "Aucune règle de commission n'est encore définie pour votre rôle.",
+  "monthLabelTitle": "Mois",
+  "vsPreviousMonth": "{percent} par rapport au mois précédent",
+  "@vsPreviousMonth": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "salesCountValue": "{count, plural, =1{1 vente} other{{count} ventes}}",
+  "@salesCountValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lastNDays": "{count} derniers jours",
+  "@lastNDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lastNWeeks": "{count} dernières semaines",
+  "@lastNWeeks": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "lastNMonths": "{count} derniers mois",
+  "@lastNMonths": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rulePercentOf": "{percent} de la valeur de la vente",
+  "@rulePercentOf": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "ruleFixedPerUnit": "{amount} par unité",
+  "@ruleFixedPerUnit": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "payoutForMonth": "Pour {month}",
+  "@payoutForMonth": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "insightChange": "Gains {change} par rapport au mois précédent.",
+  "@insightChange": {
+    "placeholders": {
+      "change": {
+        "type": "String"
+      }
+    }
+  },
+  "insightCommissionShare": "Les commissions représentent {percent} de vos gains.",
+  "@insightCommissionShare": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "insightBestMonth": "{month} est votre meilleur mois ({amount}).",
+  "@insightBestMonth": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "targetsAndBonuses": "Objectifs et primes",
+  "targetsSubtitle": "Suivez vos objectifs et vos primes",
+  "targetProgress": "Progression",
+  "salesTargetLabel": "Objectif",
+  "achievedLabel": "Atteint",
+  "remainingLabel": "Restant",
+  "activeTargets": "Objectifs en cours",
+  "bonusEligible": "Primes acquises",
+  "bonusIncluded": "Dans les gains",
+  "viewTargetDetails": "Voir l'objectif",
+  "myBonuses": "Mes primes",
+  "myTargets": "Mes objectifs",
+  "performanceSummary": "Résumé des performances",
+  "targetProgressTrend": "Évolution des objectifs",
+  "targetRulesPolicy": "Règles des objectifs et des primes",
+  "noTargetThisMonth": "Aucun objectif ce mois-ci",
+  "noTargetThisMonthMessage": "Votre responsable fixe vos objectifs. Ils apparaissent ici une fois définis.",
+  "targetDetails": "Détails de l'objectif",
+  "targetInformation": "Informations sur l'objectif",
+  "targetAmount": "Objectif",
+  "achievedSales": "Atteint",
+  "progressLabel": "Progression",
+  "periodLabel": "Période",
+  "targetProduct": "Produit",
+  "rewardLabel": "Récompense",
+  "bonusOnTarget": "Prime à l'objectif",
+  "reachTargetHint": "Atteignez 100 % de l'objectif pour gagner la prime.",
+  "targetStateActive": "En cours",
+  "targetStateUpcoming": "À venir",
+  "targetStateCompleted": "Terminé",
+  "noTargetsYet": "Aucun objectif",
+  "bonusEligibility": "Éligibilité à la prime",
+  "eligibilityStatus": "Conditions",
+  "eligibleTitle": "Vous avez droit à cette prime !",
+  "notEligibleYet": "Pas encore éligible",
+  "conditionReachTarget": "Objectif atteint (100 % ou plus)",
+  "currentStatus": "Situation actuelle",
+  "statusReached": "Objectif atteint",
+  "statusOnTrack": "Dans les temps",
+  "statusBehind": "En retard",
+  "statusNotReached": "Non atteint",
+  "statusNotStarted": "Pas commencé",
+  "bonusDetails": "Détails de la prime",
+  "bonusInformation": "Informations sur la prime",
+  "bonusTypeLabel": "Type de prime",
+  "bonusRateLabel": "Montant de la prime",
+  "bonusAmountLabel": "Montant de la prime",
+  "expectedPayout": "Versement prévu",
+  "bonusFixed": "Fixe",
+  "bonusPerUnit": "Par unité vendue",
+  "bonusStatePending": "En attente",
+  "bonusStateIncluded": "Dans les gains",
+  "bonusStateReversed": "Annulée",
+  "bonusStateInProgress": "En cours",
+  "bonusStateNotReached": "Non atteinte",
+  "bonusPendingNote": "Atteinte. Elle rejoint vos gains à la clôture du mois par l'équipe d'administration, et est versée avec eux.",
+  "bonusIncludedNote": "Cette prime fait partie de vos gains arrêtés.",
+  "bonusReversedNote": "Un remboursement a fait repasser l'objectif sous le seuil : la prime a été reprise.",
+  "bonusInProgressNote": "Continuez : la prime est gagnée dès que l'objectif est atteint.",
+  "bonusNotReachedNote": "La période s'est terminée sans atteindre l'objectif : pas de prime.",
+  "bonusHistory": "Historique des primes",
+  "noBonusesYet": "Aucune prime",
+  "noBonusesMessage": "Les primes que vous gagnez apparaissent ici.",
+  "totalSalesLabel": "Ventes totales",
+  "targetsReachedLabel": "Objectifs atteints",
+  "bonusesEarnedLabel": "Primes gagnées",
+  "monthlyPerformance": "Performance mensuelle",
+  "noPerformanceYet": "Aucun objectif terminé sur cette période.",
+  "avgAchievement": "Réalisation moyenne",
+  "vsPreviousRange": "par rapport à la période précédente",
+  "achievementLegend": "Réalisation (%)",
+  "salesLegend": "Ventes",
+  "rulesTargetsTitle": "Règles des objectifs",
+  "rulesBonusTitle": "Politique de primes",
+  "ruleT1": "Votre responsable fixe vos objectifs : un montant de ventes ou un nombre d'unités, pour un jour, une semaine, un mois ou une période choisie.",
+  "ruleT2": "La progression compte vos ventes terminées et payées, diminuées des remboursements.",
+  "ruleB1": "Une prime est gagnée quand vous atteignez 100 % de l'objectif.",
+  "ruleB2": "Une prime est soit un montant fixe, soit un montant pour chaque unité vendue sur la période.",
+  "ruleB3": "Les primes gagnées rejoignent vos gains à la clôture du mois et sont versées avec eux.",
+  "ruleB4": "Un remboursement qui vous fait repasser sous l'objectif reprend la prime.",
+  "targetPeriodDaily": "Jour",
+  "targetPeriodWeekly": "Semaine",
+  "targetPeriodMonthly": "Mois",
+  "targetPeriodCustom": "Période personnalisée",
+  "unitsValue": "{count} unités",
+  "@unitsValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "percentValue": "{percent} %",
+  "@percentValue": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "awayFromBonus": "Continuez ! Il vous manque {percent} pour atteindre l'objectif.",
+  "@awayFromBonus": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "bonusPaidIn": "Incluse dans les gains de {month}",
+  "@bonusPaidIn": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "afterMonthClosed": "Après la clôture de {month}",
+  "@afterMonthClosed": {
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "targetsReachedValue": "{reached} / {total}",
+  "@targetsReachedValue": {
+    "placeholders": {
+      "reached": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "perUnitRate": "{amount} par unité vendue",
+  "@perUnitRate": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "fixedRate": "{amount} (fixe)",
+  "@fixedRate": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "notifications": "Notifications",
+  "notificationsSubtitle": "Restez informé de votre activité",
+  "notifAll": "Toutes",
+  "notifUnread": "Non lues",
+  "notifImportant": "Importantes",
+  "markAllAsRead": "Tout marquer comme lu",
+  "markAsRead": "Marquer comme lu",
+  "clearRead": "Effacer les lues",
+  "clearSelected": "Effacer",
+  "managePreferences": "Gérer les préférences",
+  "notificationCategories": "Catégories de notifications",
+  "notificationHistory": "Historique des notifications",
+  "notificationPreferences": "Préférences de notifications",
+  "notificationDetails": "Détail de la notification",
+  "noNotifications": "Aucune notification",
+  "noNotificationsMessage": "Les alertes sur votre stock, vos demandes, vos gains et vos objectifs apparaissent ici.",
+  "catInventory": "Stock et inventaire",
+  "catRequests": "Demandes de stock",
+  "catSales": "Ventes et paiements",
+  "catEarnings": "Gains et paiements",
+  "catTargets": "Objectifs et primes",
+  "catOperations": "Opérations et caisse",
+  "catSystem": "Système et annonces",
+  "catInventorySub": "Stock bas, arrivages",
+  "catRequestsSub": "Approbation, refus, préparation",
+  "catSalesSub": "Ventes, alertes de paiement",
+  "catEarningsSub": "Commissions, paiements",
+  "catTargetsSub": "Progression, réussites, primes",
+  "catOperationsSub": "Remises, rapprochement, shifts",
+  "catSystemSub": "Mises à jour, avis importants",
+  "alwaysOn": "Toujours activée",
+  "preferencesIntro": "Choisissez les notifications à recevoir dans l'application.",
+  "pushNotAvailable": "Les notifications sur le téléphone (push) ne sont pas encore disponibles.",
+  "allTime": "Tout",
+  "yesterdayLabel": "Hier",
+  "agoNow": "À l'instant",
+  "notifView": "Voir",
+  "ntLowStock": "Alerte de stock bas",
+  "ntOutOfStock": "Rupture de stock",
+  "ntStockOnItsWay": "Stock en route",
+  "ntRequestApproved": "Demande de stock approuvée",
+  "ntRequestRejected": "Demande de stock refusée",
+  "ntPayoutApproved": "Paiement approuvé",
+  "ntPayoutPaid": "Paiement effectué",
+  "ntPayoutReversed": "Paiement annulé",
+  "ntNumberVerified": "Numéro de paiement confirmé",
+  "ntNumberRejected": "Numéro de paiement refusé",
+  "ntEarningsFinal": "Gains du mois arrêtés",
+  "ntTargetReached": "Objectif atteint",
+  "ntTargetMilestone": "Progression de l'objectif",
+  "ntHandover": "Remise de caisse",
+  "ntShiftOpen": "Shift encore ouvert",
+  "ntAnnouncement": "Annonce",
+  "ntGeneric": "Notification",
+  "notifFilterLabel": "{label} ({count})",
+  "@notifFilterLabel": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "newCount": "{count} nouvelles",
+  "@newCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectedCount": "{count} sélectionnée(s)",
+  "@selectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "agoMinutes": "{count} min",
+  "@agoMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "agoHours": "{count} h",
+  "@agoHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "agoDays": "{count} j",
+  "@agoDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pushOnPhone": "Notifications push sur ce téléphone",
+  "editProfile": "Modifier le profil",
+  "fullNameLabel": "Nom complet",
+  "changePhone": "Changer de numéro",
+  "newPhoneLabel": "Nouveau numéro de téléphone",
+  "confirmationCode": "Code de confirmation",
+  "saveChanges": "Enregistrer",
+  "profileSaved": "Profil mis à jour",
+  "phoneChanged": "Numéro de téléphone changé",
+  "changePhoto": "Changer la photo",
+  "photoUpdated": "Photo mise à jour",
+  "enterYourName": "Entrez votre nom.",
+  "emailReadOnly": "Votre e-mail ne peut être modifié que par un administrateur.",
+  "fileTooBig": "L'image dépasse 10 Mo.",
+  "securityIntro": "Gardez votre compte sûr : mot de passe, connexions et appareils.",
+  "twoFactor": "Authentification à deux facteurs",
+  "twoFactorAdminsOnly": "Réservée aux administrateurs",
+  "loginActivity": "Activité de connexion",
+  "loginActivitySub": "Voir les connexions récentes",
+  "signOutEverywhere": "Déconnecter tous les autres appareils",
+  "signOutEverywhereSub": "Tous les autres téléphones devront se reconnecter",
+  "signOutEverywhereConfirm": "Tous les autres téléphones devront se reconnecter. Celui-ci reste connecté.",
+  "signedOutEverywhere": "Autres appareils déconnectés",
+  "activitySignedIn": "Connexion",
+  "activityPasswordChanged": "Mot de passe changé",
+  "activitySessionsRevoked": "Autres appareils déconnectés",
+  "noActivity": "Aucune activité",
+  "appSettings": "Réglages de l'application",
+  "appSettingsSub": "Langue, reçu, notifications",
+  "general": "Général",
+  "languageLabel": "Langue",
+  "followPhone": "Suivre mon téléphone",
+  "operational": "Opérationnel",
+  "defaultOperation": "Opération par défaut",
+  "defaultOperationSub": "S'ouvre en premier à la connexion",
+  "showReceiptAfterSale": "Proposer le reçu après la vente",
+  "receiptOptionsSub": "Proposer le reçu sur la confirmation de vente",
+  "faq": "Questions fréquentes",
+  "faqSub": "Réponses rapides aux questions courantes",
+  "contactSupport": "Contacter le support",
+  "contactSupportSub": "Obtenez de l'aide de l'équipe LUTIANO",
+  "reportIssue": "Signaler un problème",
+  "reportIssueSub": "Quelque chose ne fonctionne pas comme prévu ?",
+  "suggestImprovement": "Proposer une amélioration",
+  "suggestImprovementSub": "Partagez vos idées avec nous",
+  "mySupportRequests": "Mes demandes au support",
+  "supportRequest": "Demande au support",
+  "requestType": "Type de demande",
+  "supportSubject": "Objet",
+  "supportSubjectHint": "ex. Impossible d'enregistrer une vente",
+  "supportDescription": "Description",
+  "supportDescriptionHint": "Décrivez votre problème en détail…",
+  "supportFillIn": "Renseignez l'objet et la description.",
+  "attachImage": "Joindre une image (facultatif)",
+  "removeAttachment": "Retirer l'image",
+  "maxTenMb": "Image, 10 Mo maximum",
+  "supportTypeQuestion": "Question",
+  "supportTypeIssue": "Problème",
+  "supportTypeImprovement": "Amélioration",
+  "supportTypeAccount": "Compte",
+  "supportOpen": "Ouverte",
+  "supportInProgress": "En cours",
+  "supportResolved": "Résolue",
+  "noSupportRequests": "Aucune demande au support",
+  "teamReply": "Réponse de l'équipe",
+  "noReplyYet": "Pas encore de réponse. Vous serez prévenu quand l'équipe répondra.",
+  "ntSupportReply": "Réponse du support",
+  "faqQ1": "Pourquoi ne puis-je pas enregistrer de vente ?",
+  "faqA1": "Il faut un shift de caisse ouvert. Ouvrez-en un depuis la carte Caisse de l'accueil, avec votre fonds de caisse.",
+  "faqQ2": "Comment recevoir du stock ?",
+  "faqA2": "Allez dans Inventaire, puis Réception de stock. Comptez ce qui est arrivé et confirmez la quantité. Un manque demande un motif.",
+  "faqQ3": "Comment demander plus de stock ?",
+  "faqA3": "Inventaire, puis Demandes de stock, puis Demander du stock (Barista mobile et Agent de marché). Un responsable approuve ou refuse la demande entière.",
+  "faqQ4": "Quand mes gains sont-ils définitifs ?",
+  "faqA4": "Un mois est provisoire tant que l'équipe d'administration ne l'a pas arrêté. Les primes gagnées rejoignent alors vos gains.",
+  "faqQ5": "J'ai oublié mon mot de passe",
+  "faqA5": "Sur l'écran de connexion, touchez Mot de passe oublié. Un code est envoyé par SMS au numéro enregistré.",
+  "faqQ6": "Comment changer mon numéro de téléphone ?",
+  "faqA6": "Profil, puis Modifier le profil, puis Changer de numéro. Un code est envoyé au nouveau numéro pour le confirmer.",
+  "codeSentTo": "Nous avons envoyé un code au {phone}.",
+  "@codeSentTo": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "requestSentRef": "Demande {reference} envoyée",
+  "@requestSentRef": {
+    "placeholders": {
+      "reference": {
+        "type": "String"
+      }
+    }
+  },
+  "sendPhoneCode": "Envoyer le code",
+  "termsOfUse": "Conditions d'utilisation",
+  "privacyPolicy": "Politique de confidentialité",
+  "legalDraftNotice": "Texte provisoire, à faire relire par le conseil juridique de LUTIANO avant la mise en service de l'application.",
+  "termsBody": "## À qui s'adressent ces conditions\nCette application est destinée aux vendeurs LUTIANO. Votre compte est créé par LUTIANO et vous est strictement personnel.\n\n## Votre compte\nGardez votre mot de passe secret et ne partagez jamais votre compte. Tout ce qui est fait avec votre compte est enregistré à votre nom. Si vous pensez que quelqu'un connaît votre mot de passe, changez-le ou déconnectez tous les autres appareils depuis Sécurité.\n\n## Enregistrer les ventes et le stock\nEnregistrez chaque vente, mouvement de caisse et mouvement de stock avec exactitude et à temps. N'enregistrez pas de ventes qui n'ont pas eu lieu. Les corrections passent par un remboursement ou une demande, jamais par une seconde vente.\n\n## Argent et stock\nVous êtes responsable de l'argent et du stock que vous manipulez pendant votre service. Les écarts constatés à la clôture du service sont enregistrés et examinés par l'équipe.\n\n## Gains\nLes commissions, primes et paiements suivent les règles fixées par LUTIANO et affichées dans l'onglet Gains. Les montants sont provisoires tant que le mois n'est pas clôturé.\n\n## Usage acceptable\nN'utilisez l'application que pour le travail LUTIANO. N'essayez pas d'accéder à des données que vous n'avez pas le droit de voir et ne perturbez pas l'application ni ses serveurs.\n\n## Fin de l'accès\nLUTIANO peut suspendre ou fermer un compte lorsqu'un vendeur quitte l'entreprise ou lorsque ces conditions ne sont pas respectées.\n\n## Modifications et contact\nCes conditions peuvent évoluer ; l'application affichera la nouvelle version. Pour toute question, utilisez Aide et assistance dans votre profil.",
+  "privacyBody": "## Ce que nous conservons sur vous\nVotre nom, numéro de téléphone, adresse e-mail, photo de profil, langue, les lieux où vous travaillez et l'historique de vos connexions. Si l'application plante, un rapport contenant l'erreur et le modèle de votre téléphone est envoyé à notre équipe technique ; il ne contient aucune information personnelle.\n\n## Ce que nous enregistrons pendant votre travail\nLes ventes, mouvements de caisse, demandes de stock, services et demandes d'assistance que vous faites, avec l'heure et le lieu, afin que l'entreprise compte son argent et son stock et calcule vos gains.\n\n## Notifications\nPour vous envoyer des messages, nous conservons l'identifiant de votre téléphone pour les notifications push, ainsi que vos choix de notification. Vous pouvez désactiver les notifications non essentielles dans les paramètres de notification.\n\n## Pourquoi nous l'utilisons\nPour faire fonctionner l'entreprise, vous payer correctement, sécuriser les comptes et répondre à vos demandes d'assistance. Nous ne vendons pas vos données et ne les utilisons pas pour la publicité.\n\n## Qui peut les voir\nLes administrateurs et responsables de LUTIANO, dans la limite de ce que leur rôle exige. Les prestataires que nous utilisons pour envoyer les SMS et les notifications push ne reçoivent que ce qui est nécessaire pour livrer le message.\n\n## Durée de conservation\nLes enregistrements de l'entreprise sont conservés aussi longtemps que la loi et la comptabilité l'exigent. Les notifications lues sont supprimées après 90 jours. Lorsque vous partez, votre compte est fermé et les informations personnelles inutiles aux archives peuvent être supprimées sur demande.\n\n## Vos choix\nVous pouvez modifier votre nom, votre téléphone et votre photo dans votre profil, changer la langue de l'application et nous demander via Aide et assistance de consulter, corriger ou supprimer vos données personnelles.\n\n## Sécurité\nVotre session est conservée dans le stockage sécurisé de votre téléphone et se termine à votre déconnexion. Les codes de connexion et les mots de passe ne sont jamais affichés dans l'application.\n\n## Contact\nUtilisez Aide et assistance dans votre profil pour toute question sur la confidentialité.",
+  "salesCampaigns": "Campagnes de vente",
+  "salesCampaignsSub": "Primes supplémentaires quand vos ventes atteignent un palier",
+  "noCampaigns": "Aucune campagne",
+  "noCampaignsMessage": "Quand LUTIANO lance une campagne de vente pour vous, elle apparaîtra ici.",
+  "campaignReward": "Prime actuelle",
+  "yourProgress": "Votre progression",
+  "campaignNetSales": "Vos ventes nettes",
+  "nextTierHint": "Atteignez {amount} de ventes nettes pour gagner une prime de {bonus}.",
+  "allTiersReached": "Vous avez atteint tous les paliers. Bravo !",
+  "campaignTiersTitle": "Paliers",
+  "tierBonus": "Prime {bonus}",
+  "campaignBonusPaid": "Prime versée : {bonus}",
+  "campaignBonusNote": "La prime du plus haut palier atteint est ajoutée à vos gains après la fin de la campagne. Les remboursements réduisent vos ventes nettes.",
+  "campaignOperation": "Concerne",
+  "allSellers": "Tous les vendeurs",
+  "customerOrders": "Commandes clients",
+  "customerOrder": "Commande client",
+  "noCustomerOrders": "Aucune commande client",
+  "noCustomerOrdersMessage": "Les commandes passées par les clients à votre point de vente apparaissent ici.",
+  "ordersTabActive": "En cours",
+  "ordersTabCompleted": "Terminées",
+  "ordersTabCancelled": "Annulées",
+  "orderStatusPlaced": "Nouvelle",
+  "orderStatusAccepted": "En préparation",
+  "orderStatusReady": "Prête",
+  "orderStatusCollected": "Terminée",
+  "orderStatusRejected": "Refusée",
+  "orderStatusCancelled": "Annulée",
+  "orderStatusExpired": "Expirée",
+  "acceptOrder": "Accepter la commande",
+  "declineOrder": "Refuser la commande",
+  "declineReasonHint": "Pourquoi ? (le client le voit)",
+  "markReady": "Marquer comme prête",
+  "handOver": "Remettre",
+  "handOverMessage": "Encaissez {total} en espèces et remettez la commande. La vente est enregistrée.",
+  "cashReceivedLabel": "Espèces reçues",
+  "confirmHandOver": "Confirmer la remise",
+  "orderHandedOver": "Commande remise et enregistrée comme vente.",
+  "customerNote": "Note du client",
+  "orderItems": "Articles",
+  "orderProgress": "Progression",
+  "ntNewOrder": "Nouvelle commande",
+  "scanReward": "Scanner une récompense",
+  "rewardFor": "Récompense de {name}",
+  "takeOffPercent": "Déduisez {percent} % de l'addition du client.",
+  "fromThisStock": "Prélevée sur le stock de ce point de vente.",
+  "rewardAlreadyUsed": "Cette récompense a déjà été utilisée.",
+  "rewardExpiredCode": "Cette récompense a expiré.",
+  "giveReward": "Donner la récompense",
+  "rewardGiven": "Récompense donnée."
+}

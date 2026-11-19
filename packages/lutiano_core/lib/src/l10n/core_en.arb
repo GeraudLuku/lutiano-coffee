@@ -1,0 +1,22 @@
+{
+  "retry": "Retry",
+  "all": "All",
+  "loading": "Loading",
+  "addToCart": "Add to cart",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity",
+  "errUnexpected": "Something went wrong. Try again.",
+  "errNetwork": "Cannot reach the LUTIANO server. Check your connection and try again.",
+  "errSessionExpired": "Your session has expired. Sign in again.",
+  "errForbidden": "You do not have permission to do this.",
+  "errGeneric": "Something went wrong ({status}). Try again.",
+  "@errGeneric": {
+    "placeholders": {
+      "status": {
+        "type": "int"
+      }
+    }
+  },
+  "takePhoto": "Take a photo",
+  "chooseFromGallery": "Choose from gallery"
+}

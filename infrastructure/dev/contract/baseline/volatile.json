@@ -1,0 +1,9 @@
+{
+ "admin GET /api/v1/dashboard": [
+  ".body.data.inactiveSellers"
+ ],
+ "inventory GET /api/v1/dashboard": [
+  ".body.data.inactiveSellers"
+ ],
+ "_why": "ties on last_sale_at (never sold) are ordered arbitrarily by the original query, so which sellers appear first differs between two runs"
+}

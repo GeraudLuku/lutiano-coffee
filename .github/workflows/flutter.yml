@@ -1,0 +1,27 @@
+name: flutter
+on:
+  pull_request:
+    paths: ['apps/seller-app/**', 'apps/customer-app/**', 'packages/lutiano_core/**']
+  push:
+    branches: [main]
+    paths: ['apps/seller-app/**', 'apps/customer-app/**', 'packages/lutiano_core/**']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [packages/lutiano_core, apps/seller-app, apps/customer-app]
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.50.0
+          cache: true
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test

@@ -1,0 +1,8 @@
+package com.lutiano.api.models.response.cash;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import java.util.Map;
+
+public record RecipientResponse(@JsonProperty("full_name") String fullName, String id, String role, @JsonAnySetter @JsonAnyGetter Map<String, Object> other) {}

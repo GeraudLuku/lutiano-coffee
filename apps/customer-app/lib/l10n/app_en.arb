@@ -1,0 +1,510 @@
+{
+  "appTitle": "LUTIANO Coffee",
+  "coffee": "Coffee",
+  "tagline": "Premium coffee, closer to you.",
+  "welcomeHeadline": "Great Coffee, Closer to You",
+  "welcomeSubtitle": "Premium coffee from our points of sale, mobile baristas and your favourite markets.",
+  "getStarted": "Get Started",
+  "alreadyHaveAccount": "Already have an account?",
+  "logIn": "Log In",
+  "signUp": "Sign Up",
+  "noAccount": "Don't have an account?",
+  "logInToYourAccount": "Log In to Your Account",
+  "accessYourOrders": "Access your orders, rewards and more.",
+  "sessionEnded": "Your session ended. Please log in again.",
+  "phoneNumber": "Phone number",
+  "enterValidPhone": "Enter a Cameroonian mobile number (6XX XX XX XX).",
+  "password": "Password",
+  "enterYourPassword": "Enter your password.",
+  "passwordOptional": "Password (optional, 10+ characters)",
+  "passwordTooShort": "Use at least 10 characters.",
+  "passwordsDoNotMatch": "The passwords do not match.",
+  "confirmPassword": "Confirm password",
+  "showPassword": "Show password",
+  "hidePassword": "Hide password",
+  "signingIn": "Logging in…",
+  "sendMeACode": "Send me a code",
+  "forgotPassword": "Forgot password?",
+  "or": "or",
+  "continueWithGoogle": "Continue with Google",
+  "continueWithApple": "Continue with Apple",
+  "createYourAccount": "Create Your Account",
+  "joinLutiano": "Join LUTIANO Coffee and enjoy great coffee and rewards.",
+  "fullName": "Full name",
+  "enterYourName": "Enter your name.",
+  "emailOptional": "Email (optional)",
+  "enterValidEmail": "Enter a valid email address.",
+  "iAgreeTo": "I agree to the",
+  "and": "and",
+  "iAgreeToTermsAndPrivacy": "I agree to the Terms of Use and the Privacy Policy",
+  "acceptTermsToContinue": "Accept the terms to continue.",
+  "createAccount": "Create Account",
+  "pleaseWait": "Please wait…",
+  "verifyAccount": "Verify Account",
+  "verifyYourPhone": "Verify Your Phone",
+  "enterCodeSentTo": "Enter the 6-digit code we sent to {phone}.",
+  "@enterCodeSentTo": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "verify": "Verify",
+  "verifying": "Verifying…",
+  "resendCode": "Resend code",
+  "resendIn": "Resend code in {seconds}s",
+  "@resendIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "codeSent": "A new code was sent.",
+  "resetPassword": "Reset Password",
+  "weWillSendCode": "We will send a code to your phone.",
+  "enterCodeAndNewPassword": "Enter the code we sent and choose a new password.",
+  "sendCode": "Send code",
+  "sixDigitCode": "6-digit code",
+  "enterTheCode": "Enter the 6-digit code.",
+  "newPassword": "New password",
+  "passwordChanged": "Your password was changed.",
+  "oneLastStep": "One Last Step",
+  "addYourPhoneWhy": "Orders and rewards go with your phone number. We will confirm it by SMS.",
+  "home": "Home",
+  "menu": "Menu",
+  "orders": "Orders",
+  "rewards": "Rewards",
+  "profile": "Profile",
+  "hello": "Hello, {name}",
+  "@hello": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "coffeeLover": "Coffee lover",
+  "scanToOrder": "Scan to Order",
+  "scanToOrderHint": "Scan the QR code at a LUTIANO sales point.",
+  "findASalesPoint": "Find a sales point",
+  "recentSalesPoints": "Recent sales points",
+  "categories": "Categories",
+  "popularDrinks": "Popular Drinks",
+  "seeAll": "See all",
+  "cart": "Cart",
+  "searchMenu": "Search the menu…",
+  "noProductsFound": "Nothing found",
+  "tryAnotherSearch": "Try another search or category.",
+  "chooseSalesPointHint": "Choose a sales point to see what is available and order.",
+  "orderingFrom": "Ordering from {name}",
+  "@orderingFrom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "choose": "Choose",
+  "change": "Change",
+  "fromPrice": "from {price}",
+  "@fromPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "unavailableHere": "Not available at this sales point right now.",
+  "addToFavourites": "Add to favourites",
+  "removeFromFavourites": "Remove from favourites",
+  "size": "Size",
+  "addOnsOptional": "Add-ons (optional)",
+  "addToCartPrice": "Add to Cart ({price})",
+  "@addToCartPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "addedToCart": "Added to cart!",
+  "addedToCartMessage": "{name} was added to your cart.",
+  "@addedToCartMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "continueShopping": "Continue shopping",
+  "viewCart": "View cart ({count})",
+  "@viewCart": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "yourCart": "Your Cart",
+  "clear": "Clear",
+  "cartEmpty": "Your cart is empty",
+  "cartEmptyMessage": "Browse the menu and add your favourite coffee.",
+  "browseMenu": "Browse Menu",
+  "salesPoint": "Sales point",
+  "total": "Total",
+  "proceedToCheckout": "Proceed to Checkout",
+  "favourites": "Favourites",
+  "noFavourites": "No favourites yet",
+  "noFavouritesMessage": "Tap the heart on a product to keep it here.",
+  "salesPoints": "Sales Points",
+  "searchSalesPoints": "Search sales points…",
+  "noSalesPoints": "No sales points found",
+  "pointAtQr": "Point the camera at the sales point's QR code.",
+  "enterCodeManually": "Enter code manually",
+  "salesPointCodeHint": "Code (LUTIANO:OP:…)",
+  "cancel": "Cancel",
+  "continueLabel": "Continue",
+  "cameraUnavailable": "The camera is not available. You can enter the code instead.",
+  "codeNotRecognised": "This code was not recognised.",
+  "openNow": "Open now",
+  "closedNow": "Closed now",
+  "openingHours": "Opening hours",
+  "paymentMethods": "Accepted payments",
+  "cashAtSalesPoint": "Cash at the sales point",
+  "selectThisSalesPoint": "Select this sales point",
+  "orderHere": "Order Here",
+  "typeFixed": "Shop",
+  "typeMobile": "Mobile barista",
+  "typeMarket": "Market stand",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "accountDetails": "Account Details",
+  "securityAndLogin": "Security & Login",
+  "language": "Language",
+  "followPhone": "Follow the phone",
+  "aboutLutiano": "About LUTIANO",
+  "termsOfUse": "Terms of Use",
+  "privacyPolicy": "Privacy Policy",
+  "licenses": "Licenses",
+  "versionValue": "Version {version}",
+  "@versionValue": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "logOut": "Log Out",
+  "logOutQuestion": "Log out?",
+  "logOutConfirm": "Are you sure you want to log out of your account?",
+  "profileSaved": "Profile saved.",
+  "saveChanges": "Save Changes",
+  "save": "Save",
+  "changePhoneNumber": "Change phone number",
+  "newPhoneNumber": "New phone number",
+  "receiveOffers": "Receive offers",
+  "receiveOffersHint": "News, offers and campaigns by notification.",
+  "changePassword": "Change password",
+  "setPassword": "Set a password",
+  "currentPassword": "Current password",
+  "newPasswordMin": "New password (10+ characters)",
+  "twoStepVerification": "Two-step verification",
+  "twoStepHint": "Ask for an SMS code after your password.",
+  "twoStepNeedsPassword": "Set a password first.",
+  "settingSaved": "Setting saved.",
+  "signOutOtherDevices": "Sign out of other devices",
+  "signedOutEverywhere": "Other devices were signed out.",
+  "deleteAccount": "Delete Account",
+  "deleteAccountQuestion": "Delete your account?",
+  "deleteAccountWarning": "Your personal details are removed and you are signed out. This cannot be undone.",
+  "legalDraftNotice": "Draft text, to be reviewed by LUTIANO's legal adviser before the app is released.",
+  "termsBody": "## Who these terms are for\nThese terms apply to customers of LUTIANO Coffee who use this app.\n\n## Your account\nYour account is personal. Keep your password and codes private. You are responsible for what is done with your account.\n\n## Orders\nAn order is a request to a LUTIANO sales point. It is accepted by the seller and paid at the sales point. Prices and availability are those shown at the sales point when you order.\n\n## Rewards\nPoints and rewards follow the rules shown in the app. They have no cash value and can expire.\n\n## Acceptable use\nUse the app for your own purchases only. Do not try to reach data that is not yours or disturb the service.\n\n## Closing your account\nYou can delete your account from the app at any time. LUTIANO may suspend an account that does not respect these terms.\n\n## Changes and contact\nThese terms may change; the app will show the new version.",
+  "privacyBody": "## What we keep about you\nYour name, phone number, email address if you give one, language, the orders you place and the points you earn. If you sign in with Google or Apple we keep the identifier they give us.\n\n## Why we use it\nTo prepare your orders, give you your rewards, keep your account safe and answer your requests. We do not sell your data.\n\n## Notifications\nWe keep your phone's notification token to tell you about your orders and rewards. Offers are sent only if you agreed.\n\n## Who can see it\nLUTIANO staff, within what their role needs, and the services we use to send SMS and notifications.\n\n## How long we keep it\nOrder records are kept as long as the accounts require. When you delete your account your personal details are removed.\n\n## Your choices\nYou can change your details, language and consent in the app, and delete your account.\n\n## Security\nYour session is kept in your phone's secure storage and ends when you log out.",
+  "checkout": "Checkout",
+  "orderReview": "Order review",
+  "totalToPay": "Total to pay",
+  "paymentMethod": "Payment method",
+  "payAtTheCounter": "Pay when you collect your order",
+  "comingSoon": "Coming soon",
+  "noteForTheSeller": "Note for the seller",
+  "noteHint": "e.g. less sugar, extra hot",
+  "confirmedBySeller": "Your order is confirmed once the seller accepts it. You pay at the sales point.",
+  "placeOrder": "Place Order",
+  "placingOrder": "Sending…",
+  "orderSent": "Order Placed!",
+  "orderSentMessage": "Your order was sent to the sales point. You will be notified when it changes.",
+  "orderNumber": "Order number",
+  "viewOrderDetails": "View Order Details",
+  "myOrders": "My Orders",
+  "filterPending": "Pending",
+  "filterCompleted": "Completed",
+  "filterCancelled": "Cancelled",
+  "noOrdersYet": "No orders yet",
+  "noOrdersMessage": "You haven't placed any orders yet. Browse the menu and order your favourite coffee.",
+  "orderDetails": "Order Details",
+  "items": "Items",
+  "orderTracking": "Order Tracking",
+  "viewReceipt": "View Receipt",
+  "preparingReceipt": "Preparing your receipt…",
+  "buyAgain": "Buy Again",
+  "cancelOrder": "Cancel Order",
+  "cancelOrderQuestion": "Cancel this order?",
+  "cancelOrderMessage": "The sales point has not accepted it yet, so you can cancel it now.",
+  "keepOrder": "Keep Order",
+  "nothingToReorder": "None of these items can be ordered right now.",
+  "someItemsUnavailable": "Some items are no longer available and were left out.",
+  "orderPlaced": "Order placed",
+  "orderBeingPrepared": "Being prepared",
+  "orderReadyStatus": "Ready",
+  "orderCompleted": "Completed",
+  "orderDeclined": "Declined",
+  "orderCancelledStatus": "Cancelled",
+  "orderExpired": "Expired",
+  "stepPlaced": "Your order has been received.",
+  "stepAccepted": "The sales point accepted it and is preparing it.",
+  "stepReady": "Your order is ready to collect.",
+  "stepCompleted": "Handed over and paid. Thank you!",
+  "stepDeclined": "The sales point could not accept this order.",
+  "stepCancelled": "This order was cancelled.",
+  "stepExpired": "Nobody handled this order in time.",
+  "yourPointsBalance": "Your points balance",
+  "pointsValue": "{points} pts",
+  "@pointsValue": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "pts": "pts",
+  "noPointsYet": "No points yet",
+  "noPointsYetMessage": "Place an order or show your loyalty QR at a sales point to start earning points.",
+  "pointsExpiringSoon": "{points} pts expire within {days} days",
+  "@pointsExpiringSoon": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "membershipTier": "{tier} Member",
+  "@membershipTier": {
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "spendToReachTier": "Spend {amount} more this year to reach {tier}",
+  "@spendToReachTier": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "topTierReached": "You have reached the top tier. Thank you!",
+  "showMyLoyaltyQr": "Show my loyalty QR",
+  "myLoyaltyQr": "My Loyalty QR",
+  "loyaltyQrHint": "Show this code to the seller when you pay in store, so the purchase earns points.",
+  "rewardsCatalogue": "Rewards Catalogue",
+  "myRewards": "My Rewards",
+  "rewardsReady": "{count} ready to use",
+  "@rewardsReady": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "pointsHistory": "Points History",
+  "membershipTiers": "Membership Tiers",
+  "howPointsWork": "How Points Work",
+  "noRewards": "No rewards yet",
+  "noRewardsMessage": "New rewards will appear here.",
+  "blockedMinPoints": "You need more points to redeem.",
+  "blockedNotEnough": "Not enough points yet.",
+  "blockedPurchases": "Needs at least {count} purchases.",
+  "@blockedPurchases": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "blockedSpend": "Needs more total spending.",
+  "redeemCost": "Costs {points} points",
+  "@redeemCost": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "redeemHint": "The reward goes to your wallet. Show its QR code to the seller to get it.",
+  "confirmRedemption": "Redeem",
+  "rewardRedeemed": "Reward Redeemed!",
+  "myReward": "My Reward",
+  "rewardQr": "Reward QR code",
+  "showThisToSeller": "Show this code to the seller.",
+  "validUntilDate": "Valid until {date}",
+  "@validUntilDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardUsedOn": "Used {date}",
+  "@rewardUsedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardExpiredMessage": "This reward has expired or is no longer valid.",
+  "stateAvailable": "Available",
+  "stateUsed": "Used",
+  "stateExpired": "Expired",
+  "noRewardsHere": "Nothing here",
+  "noRewardsHereMessage": "Rewards you redeem appear here.",
+  "typeEarned": "Earned",
+  "typeUsed": "Used",
+  "pointsEarned": "Points earned",
+  "pointsUsed": "Points used",
+  "pointsExpired": "Points expired",
+  "pointsReturned": "Points returned",
+  "pointsAdjusted": "Points adjusted",
+  "tiersHint": "Your tier follows what you spent over the last 12 months.",
+  "currentTier": "Current",
+  "startingTier": "Where everyone starts",
+  "tierNeeds": "Spend {amount} a year",
+  "@tierNeeds": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "tierEarns": "Earn {percent}% of the base points",
+  "@tierEarns": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "earnPoints": "Earn points",
+  "earnRule": "Get {points} points for every {amount} spent.",
+  "@earnRule": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      },
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "usePoints": "Use points",
+  "useRule": "Redeem rewards from {points} points.",
+  "@useRule": {
+    "placeholders": {
+      "points": {
+        "type": "int"
+      }
+    }
+  },
+  "pointsValidity": "Validity",
+  "validityRule": "Points are valid for {months} months from the day they are earned.",
+  "@validityRule": {
+    "placeholders": {
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "currentPromotions": "Current promotions",
+  "pointsEstimate": "Points estimate",
+  "purchaseAmount": "Purchase amount",
+  "calculate": "Calculate",
+  "estimatedPoints": "Estimated points",
+  "estimateNote": "The points you actually earn follow the rules and promotions at the time of the purchase.",
+  "notifications": "Notifications",
+  "markAllRead": "Mark all as read",
+  "notificationSettings": "Notification Settings",
+  "noNotifications": "No notifications",
+  "noNotificationsMessage": "Updates about your orders, rewards and offers appear here.",
+  "close": "Close",
+  "catOrders": "Orders",
+  "catLoyalty": "Loyalty & Rewards",
+  "catPromotions": "Promotions & Offers",
+  "catSystem": "System & News",
+  "alwaysOn": "Always on",
+  "pushOnPhone": "Push on this phone",
+  "pushNotOnThisPhone": "Push notifications are not set up on this phone, so messages arrive in the app only.",
+  "hintLoyalty": "Points, tier updates, rewards",
+  "hintPromotions": "New products, discounts, campaigns",
+  "hintSystem": "App updates and announcements",
+  "ntOrderAccepted": "Order accepted",
+  "ntOrderDeclined": "Order declined",
+  "ntOrderReady": "Order ready",
+  "ntOrderComplete": "Order complete",
+  "ntOrderCancelled": "Order cancelled",
+  "ntOrderExpired": "Order expired",
+  "ntRewardRedeemed": "Reward redeemed",
+  "ntRewardUsed": "Reward used",
+  "ntRewardExpired": "Reward expired",
+  "ntSupportReply": "Support reply",
+  "ntLutiano": "LUTIANO Coffee",
+  "helpAndSupport": "Help & Support",
+  "contactSupport": "Contact Support",
+  "myRequests": "My Requests",
+  "faq": "Frequently Asked Questions",
+  "supportRequest": "Support Request",
+  "teamReply": "Reply from the team",
+  "noReplyYet": "The team has not replied yet. You will be notified.",
+  "noRequests": "No requests",
+  "noRequestsMessage": "Your requests to the team appear here.",
+  "requestSent": "Request sent.",
+  "requestCategory": "What is it about?",
+  "requestTitle": "Title",
+  "requestDescription": "Describe the problem or question",
+  "enterATitle": "Enter a short title.",
+  "describeTheProblem": "Tell us a little more.",
+  "addPhotoOptional": "Add a photo (optional)",
+  "submitRequest": "Send Request",
+  "reqOrder": "Order & payment",
+  "reqRewards": "Points & rewards",
+  "reqAccount": "My account",
+  "reqIssue": "Report an issue",
+  "reqQuestion": "A question",
+  "reqIdea": "Suggest an improvement",
+  "reqOpen": "Open",
+  "reqInProgress": "In progress",
+  "reqResolved": "Resolved",
+  "faqQ1": "How do I order?",
+  "faqA1": "Choose a sales point (scan its QR code or pick it from the list), add products to your cart and place your order. A seller accepts it and you pay in cash when you collect it.",
+  "faqQ2": "How do I earn points?",
+  "faqA2": "Show your loyalty QR code to the seller when you pay, or order in the app. Points are added when the order is handed over.",
+  "faqQ3": "How do I use a reward?",
+  "faqA3": "Redeem it from the Rewards tab, then show its QR code to the seller at the sales point.",
+  "faqQ4": "Can I cancel an order?",
+  "faqA4": "Yes, while the sales point has not accepted it yet. After that, contact the sales point or write to support.",
+  "faqQ5": "I forgot my password.",
+  "faqA5": "On the log in screen choose Forgot password, or log in with a code sent to your phone."
+}

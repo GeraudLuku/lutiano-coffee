@@ -1,0 +1,40 @@
+package com.lutiano.api.models.response.inventory;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import java.util.Map;
+
+public record AllocationItemResponse(
+    @JsonProperty("approved_at") String approvedAt,
+    @JsonProperty("approved_by") String approvedBy,
+    @JsonProperty("approved_by_name") String approvedByName,
+    @JsonProperty("central_quantity") Long centralQuantity,
+    @JsonProperty("closed_at") String closedAt,
+    @JsonProperty("closed_by") String closedBy,
+    @JsonProperty("closed_by_name") String closedByName,
+    @JsonProperty("confirmed_by") Object confirmedBy,
+    @JsonProperty("confirmed_by_name") Object confirmedByName,
+    @JsonProperty("created_at") String createdAt,
+    @JsonProperty("created_by") String createdBy,
+    @JsonProperty("created_by_name") String createdByName,
+    @JsonProperty("created_by_role") String createdByRole,
+    @JsonProperty("decision_note") String decisionNote,
+    @JsonProperty("dispatched_at") String dispatchedAt,
+    @JsonProperty("dispatched_by") String dispatchedBy,
+    @JsonProperty("dispatched_by_name") String dispatchedByName,
+    String id,
+    @JsonProperty("image_url") String imageUrl,
+    @JsonProperty("operation_code") String operationCode,
+    @JsonProperty("operation_id") String operationId,
+    @JsonProperty("operation_name") String operationName,
+    @JsonProperty("product_id") String productId,
+    @JsonProperty("product_name") String productName,
+    @JsonProperty("received_at") Object receivedAt,
+    @JsonProperty("received_quantity") Object receivedQuantity,
+    @JsonProperty("request_id") Object requestId,
+    @JsonProperty("request_note") String requestNote,
+    @JsonProperty("sent_quantity") Long sentQuantity,
+    String sku,
+    String status,
+    @JsonAnySetter @JsonAnyGetter Map<String, Object> other) {}

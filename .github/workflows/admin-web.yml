@@ -1,0 +1,51 @@
+name: admin-web
+
+on:
+  pull_request:
+    branches: [develop, main]
+    paths: ['apps/admin-web/**', '.github/workflows/admin-web.yml']
+  push:
+    branches: [develop, main]
+    paths: ['apps/admin-web/**', '.github/workflows/admin-web.yml']
+
+concurrency:
+  group: admin-web-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: apps/admin-web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: apps/admin-web/package-lock.json
+
+      # Installs exactly what package-lock.json says, and fails if it is out of date.
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # "build" already runs the type check (tsc --noEmit) and then the production build.
+      - name: Type check and build
+        run: npm run build
+        env:
+          VITE_API_BASE: https://api.example.invalid/api/v1
+
+      - name: Keep the build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: admin-web-dist
+          path: apps/admin-web/dist
+          retention-days: 7

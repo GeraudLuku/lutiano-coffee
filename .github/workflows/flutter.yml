@@ -1,17 +1,71 @@
 name: flutter
+
 on:
   pull_request:
-    paths: ['apps/seller-app/**', 'apps/customer-app/**', 'packages/lutiano_core/**']
+    branches: [develop, main]
   push:
-    branches: [main]
-    paths: ['apps/seller-app/**', 'apps/customer-app/**', 'packages/lutiano_core/**']
+    branches: [develop, main]
+
+concurrency:
+  group: flutter-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: read
 
 jobs:
+  # Decides which projects need checking, from the files that changed.
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      projects: ${{ steps.pick.outputs.projects }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            core:
+              - 'packages/lutiano_core/**'
+            seller:
+              - 'apps/seller-app/**'
+            customer:
+              - 'apps/customer-app/**'
+            workflow:
+              - '.github/workflows/flutter.yml'
+      - id: pick
+        shell: bash
+        env:
+          CORE: ${{ steps.filter.outputs.core }}
+          SELLER: ${{ steps.filter.outputs.seller }}
+          CUSTOMER: ${{ steps.filter.outputs.customer }}
+          WORKFLOW: ${{ steps.filter.outputs.workflow }}
+        run: |
+          list=()
+
+          if [[ "$CORE" == "true" || "$WORKFLOW" == "true" ]]; then
+            list+=('"packages/lutiano_core"')
+          fi
+
+          if [[ "$SELLER" == "true" || "$CORE" == "true" || "$WORKFLOW" == "true" ]]; then
+            list+=('"apps/seller-app"')
+          fi
+
+          if [[ "$CUSTOMER" == "true" || "$CORE" == "true" || "$WORKFLOW" == "true" ]]; then
+            list+=('"apps/customer-app"')
+          fi
+
+          echo "projects=[$(IFS=,; echo "${list[*]}")]" >> "$GITHUB_OUTPUT"
+
   check:
+    needs: changes
+    if: needs.changes.outputs.projects != '[]'
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        project: [packages/lutiano_core, apps/seller-app, apps/customer-app]
+        project: ${{ fromJSON(needs.changes.outputs.projects) }}
     defaults:
       run:
         working-directory: ${{ matrix.project }}
@@ -25,3 +79,27 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
+
+  # The one check to require in branch protection: it is green when nothing needed checking or all checks passed.
+  flutter-result:
+    needs: [changes, check]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Evaluate Flutter checks
+        env:
+          CHANGES_RESULT: ${{ needs.changes.result }}
+          CHECK_RESULT: ${{ needs.check.result }}
+        run: |
+          if [[ "$CHANGES_RESULT" != "success" ]]; then
+            echo "Change detection failed or was cancelled."
+            exit 1
+          fi
+
+          if [[ "$CHECK_RESULT" == "failure" || "$CHECK_RESULT" == "cancelled" ]]; then
+            echo "Flutter checks failed or were cancelled."
+            exit 1
+          fi
+
+          echo "All required Flutter checks passed."

@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /backend/lutiano-api
+    schedule: { interval: weekly }
+    open-pull-requests-limit: 5
+  - package-ecosystem: npm
+    directory: /apps/admin-web
+    schedule: { interval: weekly }
+    open-pull-requests-limit: 5
+  - package-ecosystem: pub
+    directory: /apps/seller-app
+    schedule: { interval: weekly }
+  - package-ecosystem: pub
+    directory: /apps/customer-app
+    schedule: { interval: weekly }
+  - package-ecosystem: pub
+    directory: /packages/lutiano_core
+    schedule: { interval: weekly }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }

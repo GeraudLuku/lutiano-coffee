@@ -1,0 +1,28 @@
+# Gradle build output and cache
+.gradle
+build
+**/build
+
+# IDE files
+.idea
+.vscode
+
+# Git
+.git
+.github
+
+# Secrets and environment files
+secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Docker files
+Dockerfile
+.dockerignore

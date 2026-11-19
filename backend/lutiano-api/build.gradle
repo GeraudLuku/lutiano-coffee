@@ -11,10 +11,16 @@ version = '0.1.0'
 
 java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 
+// Adds META-INF/build-info.properties, shown by /actuator/info (version and build time).
+springBoot { buildInfo() }
+
 repositories { mavenCentral() }
 
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
+  // Health probes (liveness/readiness), Prometheus metrics and build info, on a separate management port.
+  implementation 'org.springframework.boot:spring-boot-starter-actuator'
+  runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
   implementation 'org.springframework.boot:spring-boot-starter-jdbc'
   implementation 'org.springframework.boot:spring-boot-starter-data-redis'
   implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'

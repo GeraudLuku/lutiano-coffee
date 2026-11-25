@@ -8,12 +8,13 @@
 set -euo pipefail
 
 SCRIPT="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+TF_DIR="$(dirname "$SCRIPT")/terraform"
 
 PROFILE="lutiano-terraform"
 SSH_KEY_PUB="$HOME/.ssh/id_ed25519.pub"
 VM_USER="ubuntu"
 VMS=("lutiano-1 10.0.1.10 2201" "lutiano-2 10.0.1.11 2202")
-REGION="$(sed -nE 's/^region *= *"(.*)"/\1/p' terraform.tfvars)"
+REGION="$(sed -nE 's/^region *= *"(.*)"/\1/p' "$TF_DIR/terraform.tfvars")"
 BASTION_HOST="host.bastion.${REGION}.oci.oraclecloud.com"
 
 listening() { lsof -nP -iTCP:"$1" -sTCP:LISTEN >/dev/null 2>&1; }
@@ -25,7 +26,7 @@ up() {
     exit 1
   fi
   local bastion_id
-  bastion_id="$(terraform output -raw bastion_id)"
+  bastion_id="$(terraform -chdir="$TF_DIR" output -raw bastion_id)"
   for vm in "${VMS[@]}"; do
     read -r name ip port <<<"$vm"
     if listening "$port"; then
@@ -39,8 +40,18 @@ up() {
       --wait-for-state SUCCEEDED --profile "$PROFILE" --auth security_token \
       --query 'data.resources[0].identifier' --raw-output)"
     echo "$name: opening the tunnel on port $port..."
-    ssh -f -N -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=accept-new -o ServerAliveInterval=30 \
-      -L "$port:$ip:22" -p 22 "$session_id@$BASTION_HOST"
+    # A new session can take a few seconds to accept keys, so retry a few times.
+    attempt=1
+    until ssh -f -N -i "${SSH_KEY_PUB%.pub}" -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=accept-new -o ServerAliveInterval=30 \
+      -L "$port:$ip:22" -p 22 "$session_id@$BASTION_HOST"; do
+      if [ "$attempt" -ge 6 ]; then
+        echo "$name: could not open the tunnel after $attempt tries"
+        exit 1
+      fi
+      attempt=$((attempt + 1))
+      echo "$name: session not ready yet, retrying in 5 seconds (try $attempt of 6)..."
+      sleep 5
+    done
     echo "$name: ready. Log in with: $SCRIPT ssh ${name##*-}"
   done
 }

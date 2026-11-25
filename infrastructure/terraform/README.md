@@ -37,7 +37,6 @@ You ──► Oracle Bastion ──► SSH to the private VMs
 | `loadbalancer.tf` | Reserved IP, load balancer, listeners, backends | yes |
 | `bastion.tf` | The Bastion service | yes |
 | `outputs.tf` | Load balancer IP, bastion id, VM private IPs | yes |
-| `bastion.sh` | Opens SSH tunnels to the VMs (see below) | yes |
 | `terraform.tfvars.example` | Template for your own settings | yes |
 | `backend.hcl.example` | Template for the state bucket keys | yes |
 | `.terraform.lock.hcl` | Pins the provider version | yes |
@@ -75,7 +74,7 @@ oci session authenticate --region <your-region> --profile lutiano-terraform
 
 - It opens your browser: sign in to Oracle and approve.
 - It saves the session and adds the `[lutiano-terraform]` profile to `~/.oci/config`.
-- Use a profile name of your own if you prefer, but then change `config_file_profile` in `providers.tf` and `PROFILE` in `bastion.sh` to the same name. Avoid the name `DEFAULT`, which may already hold other credentials.
+- Use a profile name of your own if you prefer, but then change `config_file_profile` in `providers.tf` and `PROFILE` in `../bastion.sh` to the same name. Avoid the name `DEFAULT`, which may already hold other credentials.
 
 Check that it works:
 
@@ -194,20 +193,20 @@ Requirements: a valid Oracle session (step 1), a network that allows outgoing SS
 
 ### With the script (recommended)
 
-From this folder:
+The script is `../bastion.sh`, one folder up, because Ansible uses it too. From this folder:
 
 ```bash
-./bastion.sh up        # create the sessions and open both tunnels
-./bastion.sh status    # which tunnels are open
-./bastion.sh ssh 1     # log in to lutiano-1   (use 2 for lutiano-2)
-./bastion.sh down      # close both tunnels
+../bastion.sh up        # create the sessions and open both tunnels
+../bastion.sh status    # which tunnels are open
+../bastion.sh ssh 1     # log in to lutiano-1   (use 2 for lutiano-2)
+../bastion.sh down      # close both tunnels
 ```
 
-- Run it from this folder: it reads `terraform.tfvars` here, and `terraform output` needs the Terraform files.
+- It works from any folder. It reads `terraform/terraform.tfvars` and the Terraform state itself.
 - The script refreshes your Oracle session, creates one bastion session per VM, and opens a tunnel for each in the background. Tunnels that are already open are skipped.
-- Sessions last **3 hours**. When they expire, run `./bastion.sh down` and then `./bastion.sh up`.
+- Sessions last **3 hours**. When they expire, run `../bastion.sh down` and then `../bastion.sh up`.
 - The ports, names and addresses are listed at the top of the script (`VMS=...`).
-- Running `./bastion.sh` with no argument prints a short help.
+- Running `../bastion.sh` with no argument prints a short help.
 
 ### By hand
 
@@ -249,8 +248,8 @@ For `lutiano-2`, use `10.0.1.11` and local port `2202`. Close a tunnel with `lso
 | `Out of host capacity` when creating a VM | Oracle has no free ARM capacity in that availability domain | Set `availability_domain_index` (1 or 2) in `terraform.tfvars`, plan and apply again, or retry later |
 | `LimitExceeded` | A free-tier limit is used up, or an old VM or boot volume still exists | Console, Limits, Quotas and Usage; delete leftovers |
 | Tunnel command hangs | The network blocks outgoing SSH | Use mobile data, and turn off the office connection |
-| `Address already in use` (port 2201 or 2202) | A tunnel is already open | `./bastion.sh status`, or `./bastion.sh down` first |
-| `Connection refused` on `127.0.0.1:2201` | No tunnel is open | `./bastion.sh up` |
+| `Address already in use` (port 2201 or 2202) | A tunnel is already open | `../bastion.sh status`, or `../bastion.sh down` first |
+| `Connection refused` on `127.0.0.1:2201` | No tunnel is open | `../bastion.sh up` |
 | `Permission denied (publickey)` on the tunnel | The bastion session was created with a different key | Use the same public key for the session and for the VMs |
 
 ## Costs and limits

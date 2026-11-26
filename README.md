@@ -196,7 +196,7 @@ You ─► Oracle Bastion ─► SSH tunnels ─► both servers
 | Step | Folder | What it does | Guide |
 |---|---|---|---|
 | 1. Create the cloud resources | [`infrastructure/terraform`](infrastructure/terraform) | Network, two ARM servers, load balancer with a fixed public IP, bastion | [README](infrastructure/terraform/README.md) |
-| 2. Open access to the private servers | [`infrastructure/bastion.sh`](infrastructure/bastion.sh) | Creates bastion sessions and opens SSH tunnels on local ports 2201 and 2202 | In both guides |
+| 2. Open access to the private servers | [`infrastructure/bastion.sh`](infrastructure/bastion.sh) | Creates bastion sessions and opens tunnels on local ports 2201 and 2202 (SSH) and 6443 (Kubernetes API) | In both guides |
 | 3. Configure the servers | [`infrastructure/ansible`](infrastructure/ansible) | Updates, SSH hardening, firewall, k3s cluster | [README](infrastructure/ansible/README.md) |
 
 The order matters: Terraform first, then the tunnels, then Ansible. Local development uses [`infrastructure/docker-compose.yml`](infrastructure/docker-compose.yml) instead of any of this.

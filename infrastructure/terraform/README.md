@@ -196,12 +196,13 @@ Requirements: a valid Oracle session (step 1), a network that allows outgoing SS
 The script is `../bastion.sh`, one folder up, because Ansible uses it too. From this folder:
 
 ```bash
-../bastion.sh up        # create the sessions and open both tunnels
+../bastion.sh up        # create the sessions and open all tunnels
 ../bastion.sh status    # which tunnels are open
 ../bastion.sh ssh 1     # log in to lutiano-1   (use 2 for lutiano-2)
-../bastion.sh down      # close both tunnels
+../bastion.sh down      # close all tunnels
 ```
 
+- It opens three tunnels: SSH to `lutiano-1` (local port 2201), SSH to `lutiano-2` (2202), and the Kubernetes API of `lutiano-1` (6443, for `kubectl` and `helm` from your computer).
 - It works from any folder. It reads `terraform/terraform.tfvars` and the Terraform state itself.
 - The script refreshes your Oracle session, creates one bastion session per VM, and opens a tunnel for each in the background. Tunnels that are already open are skipped.
 - Sessions last **3 hours**. When they expire, run `../bastion.sh down` and then `../bastion.sh up`.

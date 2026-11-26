@@ -1,0 +1,60 @@
+name: images
+
+on:
+  push:
+    branches: [develop, main]
+    paths:
+      - 'backend/**'
+      - 'apps/admin-web/**'
+      - '.github/workflows/images.yml'
+      - '.github/workflows/_build-image.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: images-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      api: ${{ steps.filter.outputs.api }}
+      admin: ${{ steps.filter.outputs.admin }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            api:
+              - 'backend/**'
+              - '.github/workflows/images.yml'
+              - '.github/workflows/_build-image.yml'
+            admin:
+              - 'apps/admin-web/**'
+              - '.github/workflows/images.yml'
+              - '.github/workflows/_build-image.yml'
+
+  api:
+    needs: changes
+    if: needs.changes.outputs.api == 'true' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/_build-image.yml
+    with:
+      image: lutiano-api
+      context: backend/lutiano-api
+    secrets: inherit
+
+  admin:
+    needs: changes
+    if: needs.changes.outputs.admin == 'true' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: read
+    uses: ./.github/workflows/_build-image.yml
+    with:
+      image: lutiano-admin
+      context: apps/admin-web
+    secrets: inherit

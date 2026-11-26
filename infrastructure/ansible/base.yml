@@ -1,0 +1,31 @@
+- name: Base setup
+  hosts: all
+  tasks:
+    - name: Update the package index and upgrade packages
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: safe
+        cache_valid_time: 3600
+
+    - name: Install base packages
+      ansible.builtin.apt:
+        name:
+        - curl
+        - ca-certificates
+        - htop
+        - iptables-persistent
+        - unattended-upgrades
+        - wget
+        - vim
+        - git
+        - unzip
+        - jq
+        state: present
+
+    - name: Set the hostname
+      ansible.builtin.hostname:
+        name: "{{ inventory_hostname }}"
+
+    - name: Set the timezone
+      community.general.timezone:
+        name: UTC

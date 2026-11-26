@@ -25,6 +25,29 @@ spring:
     password: ${ELASTICSEARCH_PASSWORD:local-search-app}
     connection-timeout: ${ELASTICSEARCH_CONNECT_TIMEOUT_MS:3000}ms
     socket-timeout: ${ELASTICSEARCH_SOCKET_TIMEOUT_MS:10000}ms
+# Operations endpoints (health probes, metrics, build info) live on their own port, which only the cluster / your machine should
+# reach: do not publish MANAGEMENT_PORT through the public ingress. Only these three endpoints exist; nothing like env or heapdump.
+management:
+  server:
+    port: ${MANAGEMENT_PORT:8081}
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes.enabled: true
+      show-details: always
+      group:
+        # "Is the process alive?" Never fails because a dependency is down, or Kubernetes would restart a healthy pod.
+        liveness:
+          include: livenessState
+        # "Can it serve traffic?" Needs MariaDB and Redis. Elasticsearch is left out on purpose: search degrades without it.
+        readiness:
+          include: readinessState,db,redis
+  metrics:
+    tags:
+      application: lutiano-api
 lutiano:
   # Push notifications (Firebase Cloud Messaging). The service-account key is a secret: keep it out of Git and out of the jar.
   # Without the file, push is simply off.

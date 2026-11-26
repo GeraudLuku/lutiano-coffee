@@ -1,0 +1,26 @@
+- name: Security hardening
+  hosts: all
+  tasks:
+    - name: Harden SSH
+      ansible.builtin.copy:
+        dest: /etc/ssh/sshd_config.d/01-hardening.conf
+        mode: "0644"
+        content: |
+          PasswordAuthentication no
+          PermitRootLogin no
+        validate: sshd -t -f %s
+      notify: Restart ssh
+
+    - name: Enable automatic security updates
+      ansible.builtin.copy:
+        dest: /etc/apt/apt.conf.d/20auto-upgrades
+        mode: "0644"
+        content: |
+          APT::Periodic::Update-Package-Lists "1";
+          APT::Periodic::Unattended-Upgrade "1";
+
+  handlers:
+    - name: Restart ssh
+      ansible.builtin.service:
+        name: ssh
+        state: restarted

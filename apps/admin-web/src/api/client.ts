@@ -1,6 +1,8 @@
 import type { Session } from '../types/models';
 
-export const API_BASE: string = import.meta.env.VITE_API_BASE ?? 'http://localhost:8080/api/v1';
+// Order: runtime config (/config.js, set when the container starts) > VITE_API_BASE (local development) > localhost default.
+export const API_BASE: string =
+  window.__LUTIANO__?.apiBase || import.meta.env.VITE_API_BASE || 'http://localhost:8080/api/v1';
 const SESSION_KEY = 'lutiano-admin-session';
 export const SIGNED_OUT_EVENT = 'lutiano:signed-out';
 

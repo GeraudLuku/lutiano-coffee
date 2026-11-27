@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: production-data
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/GeraudLuku/lutiano-coffee.git
+    targetRevision: main
+    path: deploy/data/overlays/production
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lutiano-production
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

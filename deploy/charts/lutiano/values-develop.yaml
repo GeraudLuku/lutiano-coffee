@@ -1,0 +1,20 @@
+api:
+  tag: sha-f7e3bb1
+  config:
+    DB_URL: jdbc:mariadb://mariadb:3306/lutiano
+    DB_USER: lutiano
+    REDIS_HOST: redis
+    REDIS_PORT: "6379"
+    ELASTICSEARCH_URL: http://elasticsearch:9200
+    ELASTICSEARCH_USERNAME: lutiano_app
+    S3_ENDPOINT: https://axtejniknqcl.compat.objectstorage.af-casablanca-1.oraclecloud.com
+    S3_REGION: af-casablanca-1
+    S3_BUCKET: lutiano-develop-products
+    S3_DOCUMENTS_BUCKET: lutiano-develop-seller-documents
+    LUTIANO_CORS_ORIGINS: http://51.170.140.253
+    LUTIANO_SMS_MODE: dev
+    LUTIANO_OTP_DEV_CODE: "123456"
+    LUTIANO_MFA_ENABLED: "true"
+
+admin:
+  tag: sha-f7e3bb1

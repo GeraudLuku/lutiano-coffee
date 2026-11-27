@@ -9,3 +9,11 @@ output "bastion_id" {
 output "vm_private_ips" {
   value = { for name, vm in oci_core_instance.vm : name => vm.private_ip }
 }
+
+output "storage_endpoint" {
+  value = "https://${data.oci_objectstorage_namespace.ns.namespace}.compat.objectstorage.${var.region}.oraclecloud.com"
+}
+
+output "storage_buckets" {
+  value = sort(keys(oci_objectstorage_bucket.files))
+}

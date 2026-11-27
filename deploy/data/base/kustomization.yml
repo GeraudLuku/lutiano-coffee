@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - redis.yml
   - mariadb.yml
+  - elasticsearch.yml
+  - elasticsearch-setup.yml

@@ -1,0 +1,40 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: elasticsearch-setup
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: setup
+          image: docker.elastic.co/elasticsearch/elasticsearch:8.15.5
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              set -e
+              E=http://elasticsearch:9200
+              until curl -sf -u "elastic:$ELASTIC_PASSWORD" "$E/_cluster/health" > /dev/null; do
+                echo "waiting for Elasticsearch..."; sleep 5
+              done
+              A="-u elastic:$ELASTIC_PASSWORD -H Content-Type:application/json"
+              curl -sf $A -X PUT "$E/_security/role/lutiano_search" \
+                -d '{"cluster":["monitor"],"indices":[{"names":["lutiano-search*"],"privileges":["all"]}]}' > /dev/null
+              curl -sf $A -X PUT "$E/_security/user/lutiano_app" \
+                -d "{\"password\":\"$ES_APP_PASSWORD\",\"roles\":[\"lutiano_search\"]}" > /dev/null
+              echo "Elasticsearch accounts ready"
+          env:
+            - name: ELASTIC_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch
+                  key: elastic-password
+            - name: ES_APP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: elasticsearch
+                  key: app-password

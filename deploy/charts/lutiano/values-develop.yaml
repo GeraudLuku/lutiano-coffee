@@ -15,6 +15,9 @@ api:
     LUTIANO_SMS_MODE: dev
     LUTIANO_OTP_DEV_CODE: "123456"
     LUTIANO_MFA_ENABLED: "true"
+    LUTIANO_FIREBASE_CREDENTIALS: /etc/lutiano/firebase/firebase-service-account.json
+    LUTIANO_GOOGLE_CLIENT_IDS: "598159546203-dual1apksomplg36ij4vmvhvhgjm33kj.apps.googleusercontent.com,598159546203-ek1jt79v1kvc6ve739nqb4c66vo8n8nl.apps.googleusercontent.com,598159546203-jo0khv63kc32u442h9nckcsjm9qasban.apps.googleusercontent.com"
+    LUTIANO_APPLE_AUDIENCES: "com.lutiano.lutianoCustomer"
 
 admin:
   tag: sha-f7e3bb1

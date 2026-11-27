@@ -29,3 +29,11 @@
     - name: Set the timezone
       community.general.timezone:
         name: UTC
+        
+    - name: Allow the memory maps Elasticsearch needs
+      ansible.posix.sysctl:
+        name: vm.max_map_count
+        value: "262144"
+        state: present
+        sysctl_set: true
+        reload: true

@@ -25,6 +25,7 @@ You ──► Oracle Bastion ──► SSH to the private VMs
 | NAT gateway | Lets the VMs reach the internet; nothing can come in through it |
 | 2 VMs (ARM, `VM.Standard.A1.Flex`) | `lutiano-1` and `lutiano-2`; sizes are set in `variables.tf` |
 | Bastion | Managed SSH access to the private VMs |
+| 4 Object Storage buckets | Private storage for the API's uploads, two per environment (see [Object Storage](#object-storage-for-the-api)) |
 
 ### Files
 
@@ -36,7 +37,8 @@ You ──► Oracle Bastion ──► SSH to the private VMs
 | `compute.tf` | The two VMs | yes |
 | `loadbalancer.tf` | Reserved IP, load balancer, listeners, backends | yes |
 | `bastion.tf` | The Bastion service | yes |
-| `outputs.tf` | Load balancer IP, bastion id, VM private IPs | yes |
+| `storage.tf` | The four private Object Storage buckets for the API | yes |
+| `outputs.tf` | Load balancer IP, bastion id, VM private IPs, storage endpoint and bucket names | yes |
 | `terraform.tfvars.example` | Template for your own settings | yes |
 | `backend.hcl.example` | Template for the state bucket keys | yes |
 | `.terraform.lock.hcl` | Pins the provider version | yes |
@@ -178,7 +180,63 @@ terraform plan                    # "No changes" means reality matches the files
 
 - **VM sizes, disks and private IPs**: the `vms` map in `variables.tf`. Adding an entry creates another VM. Check Oracle's free-tier limits first (the account this was built for allows 2 CPUs, 12 GB of memory and 200 GB of block storage in total).
 - **Firewall rules**: `network.tf` (security lists).
-- **Deleting**: the VMs and the reserved IP are the resources that matter. Review a destroy plan carefully, and never run `terraform destroy` unless you mean it.
+- **Deleting**: the VMs and the reserved IP are the resources that matter. Review a destroy plan carefully, and never run `terraform destroy` unless you mean it. The storage buckets refuse to be destroyed (see below).
+
+## Object Storage for the API
+
+The API stores product images and seller documents in Oracle Object Storage, through Oracle's S3-compatible endpoint. `storage.tf` creates one pair of buckets per environment:
+
+| Bucket | Used for |
+|---|---|
+| `lutiano-develop-products` | develop: images of products, categories, add-ons, staff, locations and customers |
+| `lutiano-develop-seller-documents` | develop: seller eligibility documents |
+| `lutiano-production-products` | production: the same images |
+| `lutiano-production-seller-documents` | production: seller documents |
+
+Bucket names are unique across the whole tenancy, which is why each environment gets its own pair. The state bucket from the one-time setup is a separate bucket and is not managed here.
+
+- **All four are private** (`NoPublicAccess`). Nothing reads them directly from the internet. The API reads and writes the files itself and serves images to the apps through its `/media/...` addresses. The seller documents are only ever served to administrators.
+- **They cannot be destroyed by accident.** Each bucket has `prevent_destroy`, so `terraform destroy` stops with an error instead of deleting uploaded files. To tear everything down on purpose, remove that setting from `storage.tf` first, and empty the buckets.
+- **Free tier:** Object Storage includes 20 GB in total across all buckets (check the current limits in Limits, Quotas and Usage).
+
+### The values the API needs
+
+```bash
+terraform output storage_endpoint   # the value for S3_ENDPOINT
+terraform output storage_buckets    # the four bucket names
+```
+
+| API setting | develop | production |
+|---|---|---|
+| `S3_ENDPOINT` | the `storage_endpoint` output | the same |
+| `S3_REGION` | your region (for example `af-casablanca-1`) | the same |
+| `S3_BUCKET` | `lutiano-develop-products` | `lutiano-production-products` |
+| `S3_DOCUMENTS_BUCKET` | `lutiano-develop-seller-documents` | `lutiano-production-seller-documents` |
+| `S3_ACCESS_KEY`, `S3_SECRET_KEY` | a key for the limited user below | its own key |
+
+### Access key (done by hand, not by Terraform)
+
+The key is kept out of Terraform on purpose, so the secret never ends up in the state file. Create it once in the Oracle console, with a user that can reach only these buckets rather than your own login:
+
+1. Create a user (for example `lutiano-storage`) and a group (for example `lutiano-storage-apps`), and add the user to the group.
+2. Add a policy in the compartment:
+   ```
+   Allow group lutiano-storage-apps to manage objects in compartment <compartment name> where any {target.bucket.name='lutiano-develop-products', target.bucket.name='lutiano-develop-seller-documents', target.bucket.name='lutiano-production-products', target.bucket.name='lutiano-production-seller-documents'}
+   Allow group lutiano-storage-apps to read buckets in compartment <compartment name>
+   ```
+3. Open the user, **Customer secret keys**, **Generate secret key**. The secret is shown once: store it in a password manager.
+4. Put the keys in the cluster, never in Git:
+   ```bash
+   kubectl -n lutiano-develop create secret generic lutiano-storage \
+     --from-literal=access-key='<access key>' \
+     --from-literal=secret-key='<secret key>'
+   ```
+   Production gets its own user, policy limited to its two buckets, and its own Secret in `lutiano-production`.
+
+### Changing the buckets
+
+- **Add or rename one**: edit the list in `storage.tf`, update the policy above to match, then plan and apply. Renaming a bucket creates a new one and, because of `prevent_destroy`, the plan fails until you remove the old name deliberately.
+- **Make images public later**: only the products buckets could ever be opened up, and the API would also need to store full bucket addresses instead of `/media/...`. That is a code change, not only a Terraform one.
 
 ## Connecting to a VM through the Bastion
 
@@ -246,6 +304,8 @@ For `lutiano-2`, use `10.0.1.11` and local port `2202`. Close a tunnel with `lso
 | `NoSuchBucket` | Wrong bucket name, region or namespace in `providers.tf`, or no access to the bucket | Check the three values; list buckets with `oci os bucket list` |
 | `Variables not allowed` in `providers.tf` | A variable used in the backend block | Write the real value; a backend cannot read variables |
 | `Duplicate resource` | The same resource is defined twice in a file | Remove the duplicate; one resource per name |
+| `Instance cannot be destroyed` | `prevent_destroy` on a storage bucket | Intended. Remove the setting from `storage.tf` only if you really want to delete the bucket |
+| `BucketAlreadyExists` or `409` on a bucket | The name is already used in your tenancy | Choose another name in `storage.tf` and in the policy |
 | `Out of host capacity` when creating a VM | Oracle has no free ARM capacity in that availability domain | Set `availability_domain_index` (1 or 2) in `terraform.tfvars`, plan and apply again, or retry later |
 | `LimitExceeded` | A free-tier limit is used up, or an old VM or boot volume still exists | Console, Limits, Quotas and Usage; delete leftovers |
 | Tunnel command hangs | The network blocks outgoing SSH | Use mobile data, and turn off the office connection |
